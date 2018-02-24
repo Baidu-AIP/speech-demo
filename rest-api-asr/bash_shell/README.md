@@ -12,17 +12,15 @@
 
 从网页中申请的应用获取appKey和appSecret
 
-```
-​```
+```bash
 APPKEY="g8eBUMSokVB1BHGmgxxxxxx"
 APPSECRET="94dc99566550d87f8fa8ece112xxxxx"
-​```
 ```
 
 
 
 ## 运行 token.sh，获取token
-```
+```bash
 sh token.sh
 ```
 有如下返回
@@ -32,7 +30,6 @@ sh token.sh
 ```
 
 - scope 含有audio_voice_assistant_get表示有语音识别能力，没有的话请至网页激活
-- scope 含有audio_tts_post表示有语音合成能力，没有的话请至网页激活
 - expires_in 表示 2592000秒后该token失效
 
 获得token  24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099
@@ -41,7 +38,7 @@ sh token.sh
 ## 运行 asr.sh，进行识别
 
 命令为 sh asr.sh $TOKEN
-```
+```bash
   sh asr.sh  24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099
 ```
 
@@ -49,3 +46,42 @@ sh token.sh
 ```json
 {"corpus_no":"6526075710854540378","err_msg":"success.","err_no":0,"result":["北京科技馆，"],"sn":"402172223481519470408"}
 ```
+
+### 测试其它音频文件
+
+
+
+修改以下参数：
+
+```bash
+FILE="16k_test.pcm"
+
+# 根据文件FILE的后缀填写：pcm/wav/amr
+FORMAT="pcm"
+# 根据文件FILE的采样率填写：16000/8000
+RATE="16000"
+
+# 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+DEV_PID="1537"
+```
+
+
+
+1. 如测试英语 修改为:
+
+```bash
+DEV_PID="1637"
+```
+
+2. 如测试采样率为8k 的amr文件8k-122.amr，修改为：
+
+```bash
+FILE="8k-122.amr"
+
+# 根据文件FILE的后缀填写：pcm/wav/amr
+FORMAT="amr"
+# 根据文件FILE的采样率填写：16000/8000
+RATE="8000"
+```
+
+   ​

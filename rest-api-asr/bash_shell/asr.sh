@@ -24,7 +24,8 @@ if  [ "$TOKEN" =  "" ] ; then
 	exit 1
 fi
 
-URL="http://vop.baidu.com/server_api?dev_pid=${DEV_PID}&token=$TOKEN&cuid=1234567"
+CUID="1234567"
+URL="http://vop.baidu.com/server_api?dev_pid=${DEV_PID}&token=$TOKEN&cuid=$CUID"
 
 HEADER="Content-Type: audio/$FORMAT;rate=$RATE";
 
