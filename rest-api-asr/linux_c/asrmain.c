@@ -27,8 +27,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
     }
     // 文件后缀 pcm/wav/amr ,不支持其它格式
     char format[] = "pcm";
-    // 采样率16000或者 8000
-    int rate = 16000;
+
     //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型 其它语种参见文档
     int dev_pid = 1537;
 
@@ -37,7 +36,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
     snprintf(config->secret_key, sizeof(config->secret_key), "%s", secret_key);
     config->file = fp;
     snprintf(config->format, sizeof(config->format), "%s", format);
-    config->rate = rate;
+    config->rate = 16000; // 采样率固定值
     config->dev_pid = dev_pid;
     snprintf(config->cuid, sizeof(config->cuid), "1234567C");
 

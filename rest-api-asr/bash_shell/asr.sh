@@ -9,8 +9,6 @@ FILE="16k_test.pcm"
 
 # 根据文件FILE的后缀填写：pcm/wav/amr
 FORMAT="pcm"
-# 根据文件FILE的采样率填写：16000/8000
-RATE="16000"
 
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 DEV_PID="1537"
@@ -27,6 +25,7 @@ fi
 CUID="1234567"
 URL="http://vop.baidu.com/server_api?dev_pid=${DEV_PID}&token=$TOKEN&cuid=$CUID"
 
+RATE="16000" // 固定值
 HEADER="Content-Type: audio/$FORMAT;rate=$RATE";
 
 #curl -i -X POST -k "$CURL_OPT" --data-binary "@$FILE"  "$URL" 

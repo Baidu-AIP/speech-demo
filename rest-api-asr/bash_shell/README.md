@@ -58,9 +58,6 @@ FILE="16k_test.pcm"
 
 # 根据文件FILE的后缀填写：pcm/wav/amr
 FORMAT="pcm"
-# 根据文件FILE的采样率填写：16000/8000
-RATE="16000"
-
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 DEV_PID="1537"
 ```
@@ -70,18 +67,16 @@ DEV_PID="1537"
 1. 如测试英语 修改为:
 
 ```bash
-DEV_PID="1637"
+DEV_PID="1737"
 ```
 
-2. 如测试采样率为8k 的amr文件8k-122.amr，修改为：
+2. 如测试采样率为16k 的amr文件16k-23850.amr，修改为：
 
 ```bash
-FILE="8k-122.amr"
+FILE="16k-23850.amr"
 
 # 根据文件FILE的后缀填写：pcm/wav/amr
 FORMAT="amr"
-# 根据文件FILE的采样率填写：16000/8000
-RATE="8000"
 ```
 
    ​

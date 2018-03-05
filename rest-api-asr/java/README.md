@@ -54,9 +54,6 @@ private final String filename = "16k_test.pcm";
 // 文件格式
 private final String format = "pcm";
 
-// 采样率
-private final int rate = 16000;
-
 //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
 private final int dev_pid = 1537;
 ```
@@ -66,20 +63,18 @@ private final int dev_pid = 1537;
 1. 如测试英语 修改为:
 
 ```bash
-$dev_pid = 1637;
+$dev_pid = 1737;
 ```
 
-2. 如测试采样率为8k 的amr文件8k-122.amr，修改为：
+2. 如测试采样率为16k 的amr文件16k-23850.amr，修改为：
 
 ```java
 // 需要识别的文件
-private final String filename = "8k-122.amr";
+private final String filename = "16k-23850.amr";
 
 // 文件格式
 private final String format = "amr";
 
-// 采样率
-private final int rate = 8000;
 ```
 
    ​

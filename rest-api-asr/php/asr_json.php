@@ -13,13 +13,13 @@ $secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
 $audio_file = "./16k.pcm";
 # 文件格式
 $format = "pcm"; // 文件后缀 pcm/wav/amr
-# 采样率
-$rate = 16000;  // 采样率16000或者 8000
+
 # 根据文档填写PID，选择语言及识别模型
 $dev_pid = 1537; //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 
 $cuid = "123456PHP";
-
+# 采样率
+$rate = 16000;  // 固定值
 /** 公共模块获取token开始 */
 
 $auth_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$apiKey."&client_secret=".$secretKey;

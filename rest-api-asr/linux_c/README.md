@@ -79,8 +79,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
     char *filename = "16k_test.pcm";
     // 文件后缀 pcm/wav/amr ,不支持其它格式
     char format[] = "pcm";
-    // 采样率16000或者 8000
-    int rate = 16000;
+    
     //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型 其它语种参见文档
     int dev_pid = 1537;
 ```
@@ -90,18 +89,16 @@ static RETURN_CODE fill_config(struct asr_config *config) {
 1. 如测试英语 修改为:
 
 ```c
-int dev_pid = 1637;
+int dev_pid = 1737;
 ```
 
-2. 如测试采样率为8k 的amr文件8k-122.amr，修改为：
+2. 如测试采样率为16k 的amr文件16k-23850.amr，修改为：
 
 ```c
 // 需要识别的文件
-char *filename = "8k-122.amr";
+char *filename = "16k-23850.amr";
 // 文件后缀 pcm/wav/amr ,不支持其它格式
 char format[] = "amr";
-// 采样率16000或者 8000
-int rate = 8000;
 ```
 
    ​

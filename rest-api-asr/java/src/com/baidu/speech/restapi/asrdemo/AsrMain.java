@@ -34,14 +34,14 @@ public class AsrMain {
     // 文件格式
     private final String format = "pcm";
 
-    // 采样率
-    private final int rate = 16000;
-
     //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
     private final int dev_pid = 1537;
 
     private String cuid = "1234567JAVA";
-
+ 
+ // 采样率固定值
+    private final int rate = 16000;
+	
     public boolean methodRaw = false; // 默认以json方式上传音频文件
 
     private final String url = "http://vop.baidu.com/server_api"; // 可以改为https
