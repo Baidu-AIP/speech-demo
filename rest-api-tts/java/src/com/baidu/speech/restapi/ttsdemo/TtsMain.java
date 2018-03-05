@@ -33,7 +33,7 @@ public class TtsMain {
     private final int spd = 5;
     // 音调，取值0-9，默认为5中语调
     private final int pit = 5;
-    // 音量，取值0-15，默认为5中音量
+    // 音量，取值0-9，默认为5中音量
     private final int vol = 5;
 
     public final String url = "http://tsn.baidu.com/text2audio"; // 可以使用https
