@@ -2,6 +2,10 @@
 
 使用php 脚本方式测试rest api 识别接口
 
+PHP版本5.x 5.3以上
+
+
+
 - windows 下需要安装 php, 及php curl扩展
 
 
