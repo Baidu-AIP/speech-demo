@@ -80,7 +80,7 @@ public class AsrMain {
         String speech = base64Encode(content);
 
         JSONObject params = new JSONObject();
-        params.put("dev-pid", dev_pid);
+        params.put("dev_pid", dev_pid);
         params.put("format", format);
         params.put("rate", rate);
         params.put("token", token);
