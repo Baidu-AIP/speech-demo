@@ -47,7 +47,7 @@ public class AsrMain {
     private final String url = "http://vop.baidu.com/server_api"; // 可以改为https
 
     public String run() throws IOException, DemoException {
-        TokenHolder holder = new TokenHolder(appKey, secretKey, TokenHolder.TTS_SCOPE);
+        TokenHolder holder = new TokenHolder(appKey, secretKey, TokenHolder.ASR_SCOPE);
         holder.resfresh();
         String token = holder.getToken();
         String result = null;
