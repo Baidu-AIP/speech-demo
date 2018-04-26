@@ -73,7 +73,7 @@ RETURN_CODE run() {
 
 // 调用识别接口
 RETURN_CODE run_tts(struct tts_config *config, const char *token) {
-    char url[300 + config->text_len * 2];
+    char url[300 + config->text_len * 3];
     CURL *curl = curl_easy_init(); // 需要释放
     char *cuid = curl_easy_escape(curl, config->cuid, strlen(config->cuid)); // 需要释放
     char *tex = curl_easy_escape(curl, config->text, config->text_len); // 需要释放
