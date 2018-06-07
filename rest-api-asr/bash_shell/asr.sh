@@ -25,7 +25,7 @@ fi
 CUID="1234567"
 URL="http://vop.baidu.com/server_api?dev_pid=${DEV_PID}&token=$TOKEN&cuid=$CUID"
 
-RATE="16000" // 固定值
+RATE="16000" # 固定值
 HEADER="Content-Type: audio/$FORMAT;rate=$RATE";
 
 #curl -i -X POST -k "$CURL_OPT" --data-binary "@$FILE"  "$URL" 
