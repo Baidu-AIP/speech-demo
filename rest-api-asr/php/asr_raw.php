@@ -34,7 +34,7 @@ $res = curl_exec($ch);
 if(curl_errno($ch))
 {
     echo curl_error($ch);
-	exit 2;
+	exit(2);
 }
 curl_close($ch);
 
