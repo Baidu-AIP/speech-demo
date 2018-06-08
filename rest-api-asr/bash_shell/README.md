@@ -5,7 +5,6 @@
 - windows 下需要安装 cygwin，在cygwin内安装curl
 
 
-
 ## 测试流程
 
 ### 修改token.sh
@@ -17,11 +16,9 @@ APPKEY="g8eBUMSokVB1BHGmgxxxxxx"
 APPSECRET="94dc99566550d87f8fa8ece112xxxxx"
 ```
 
-
-
-## 运行 token.sh，获取token
+## 运行 asr.sh，进行识别
 ```bash
-sh token.sh
+sh asr.sh
 ```
 有如下返回
 
@@ -31,18 +28,12 @@ sh token.sh
 
 - scope 含有audio_voice_assistant_get表示有语音识别能力，没有的话请至网页激活
 - expires_in 表示 2592000秒后该token失效
+- token  24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099
 
-获得token  24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099
 
 
-## 运行 asr.sh，进行识别
+最终结果如：
 
-命令为 sh asr.sh $TOKEN
-```bash
-  sh asr.sh  24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099
-```
-
-结果如：
 ```json
 {"corpus_no":"6526075710854540378","err_msg":"success.","err_no":0,"result":["北京科技馆，"],"sn":"402172223481519470408"}
 ```
