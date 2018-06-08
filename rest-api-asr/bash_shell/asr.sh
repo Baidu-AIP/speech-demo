@@ -22,14 +22,13 @@ if  [ "$TOKEN" =  "" ] ; then
 	exit 1
 fi
 
-CUID="1234567"
+CUID="1234567" # 用户自行填写，用于计算UV
 URL="http://vop.baidu.com/server_api?dev_pid=${DEV_PID}&token=$TOKEN&cuid=$CUID"
 
 RATE="16000" # 固定值
 HEADER="Content-Type: audio/$FORMAT;rate=$RATE";
 
-#curl -i -X POST -k "$CURL_OPT" --data-binary "@$FILE"  "$URL" 
 echo
-curl -X POST --data-binary "@$FILE" "$CURL_OPT" -H "$HEADER" "$URL" 
+curl -X POST -i --data-binary "@$FILE" "$CURL_OPT" -H "$HEADER" "$URL" 
 
 # 测试结果如：  {"corpus_no":"6526075710854540378","err_msg":"success.","err_no":0,"result":["北京科技馆，"],"sn":"402172223481519470408"}
