@@ -18,8 +18,8 @@ PIT=5
 #音量，取值0-9，默认为5中音量
 VOL=5
 
-#CURL_OPT="-v" 显示DEBUG信息
-CURL_OPT=""
+CURL_OPT="-v" #显示DEBUG信息
+#CURL_OPT=""
 
 if  [ "$TOKEN" =  "" ] ; then
     echo "usage: sh $0 24.03c7304a2ab08edc1589bb83cbe0de18.2592000.1522060569.282335-10455099"
