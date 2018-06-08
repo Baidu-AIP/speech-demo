@@ -81,8 +81,8 @@ RETURN_CODE run_tts(struct tts_config *config, const char *token) {
     snprintf(url, sizeof(url), url_pattern, API_TTS_URL, cuid, token, tex,
              config->per, config->spd, config->pit, config->vol);
     printf("test in browser: %s\n", url);
-    free(cuid);
-    free(tex);
+    curl_free(cuid);
+    curl_free(tex);
 
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 5); // 连接5s超时
@@ -101,7 +101,7 @@ RETURN_CODE run_tts(struct tts_config *config, const char *token) {
                  curl_easy_strerror(res_curl));
         res = ERROR_TTS_CURL;
     }
-    free(result.fp);
+
     curl_easy_cleanup(curl);
     return res;
 }
