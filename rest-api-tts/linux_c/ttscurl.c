@@ -27,7 +27,7 @@ size_t header_callback(char *buffer, size_t size, size_t nitems, struct http_res
     char key[] = "Content-Type";
     char value[MAX_HEADER_VALUE_LEN];
     if (search_header(buffer, len, key, value) == RETURN_OK) {
-        if (strstr(value, "mp3") != NULL) {
+        if (strstr(value, "audio/") != NULL) {
             result->has_error = 0;
         } else {
             fprintf(stderr, "Server return ERROR, %s : %s\n", key, value);
@@ -39,7 +39,7 @@ size_t header_callback(char *buffer, size_t size, size_t nitems, struct http_res
 
 size_t writefunc_data(void *ptr, size_t size, size_t nmemb, struct http_result *result) {
     char filename[11];
-    snprintf(filename, 11, "%s", result->has_error ? "result.txt" : "result.mp3");
+    snprintf(filename, 11, "result.%s", result->has_error ? "txt" : result->format);
     if (result->fp == NULL) {
         result->fp = fopen(filename, "w+");
         if (result->fp == NULL) {

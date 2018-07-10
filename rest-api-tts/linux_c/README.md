@@ -91,6 +91,8 @@ static RETURN_CODE fill_config(struct tts_config *config) {
     int pit = 5;
     // #音量，取值0-9，默认为5中音量
     int vol = 5;
+	// 下载的文件格式, 3：mp3(default) 4： pcm-16k 5： pcm-8k 6. wav
+	int aue = 3;
 ```
 
 

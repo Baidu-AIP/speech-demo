@@ -11,16 +11,21 @@ $secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
 $text = "覃天卫强调，各级关工委要深刻领会习近平新时代中国特色社会主义思想和党的十九大精神，打牢新时代关心下一代的思想理论根基，立足新时代坐标思考谋划工作，聚焦新时代任务把准工作方向，根据新时代要求明确建设方向。要坚持以新思想为统领，奋力开创新时代全市关心下一代工作的工作局面，着眼于习近平新时代中国特色社会主义思想这一主线和灵魂，将其贯彻到新时代关心下一代工作全过程;着眼于党对青年一代的殷切期望，进一步激发广大“五老”投身关心下一代事业的积极性和热情;着眼于对我国社会主要矛盾做出的新判断，进一步提高服务青少年的质量和水平;着眼于两个一百奋斗目标的总要求，进一步凝聚起培养合格建设者和可靠接班人的“正能量”。要切实加强关工委建设，不断提高做好关心下一代工作的专业化水平，坚持以深入有效的调查研究推动工作创新发展，不断提升基层组织建设的质量和水平，不断提高工作队伍的素质和能力，为加快实现“两个建成”、谱写新时代玉林发展新篇章再立新功、再创佳绩。";
 
 $text2 = iconv("UTF-8", "GBK", $text);
-echo mb_strlen($text2, "GBK");
+echo "text length :" . mb_strlen($text2, "GBK") . "\n";
 
 #发音人选择, 0为普通女声，1为普通男生，3为情感合成-度逍遥，4为情感合成-度丫丫，默认为普通女声
 $per = 0;
-#语速，取值0-9，默认为5中语速
+#语速，取值0-15，默认为5中语速
 $spd = 5;
-#音调，取值0-9，默认为5中语调
+#音调，取值0-15，默认为5中语调
 $pit = 5;
 #音量，取值0-9，默认为5中音量
 $vol = 5;
+// 下载的文件格式, 3：mp3(default) 4： pcm-16k 5： pcm-8k 6. wav
+$aue = 3;
+
+$formats = array(3 => 'mp3', 4 => 'pcm', 5 =>'pcm', 6 => 'wav');
+$format = $formats[$aue];
 
 $cuid = "123456PHP";
 
@@ -66,19 +71,21 @@ echo "token = $token ; expireInSeconds: ${response['expires_in']}\n\n";
 /** 拼接参数开始 **/
 // tex=$text&lan=zh&ctp=1&cuid=$cuid&tok=$token&per=$per&spd=$spd&pit=$pit&vol=$vol
 $params = array(
-	'tex' => $text,
+	'tex' => urlencode($text), // 为避免+等特殊字符没有编码，此处需要2次urlencode。
 	'per' => $per,
 	'spd' => $spd,
 	'pit' => $pit,
 	'vol' => $vol,
+	'aue' => $aue,
 	'cuid' => $cuid,
 	'tok' => $token,
 	'lan' => 'zh', //固定参数
 	'ctp' => 1, // 固定参数
 );
-
-$url = 'http://tsn.baidu.com/text2audio?' . http_build_query($params);
-echo $url . "\n"; // 反馈请带上此url
+$paramsStr =  http_build_query($params);
+$url = 'http://tsn.baidu.com/text2audio';
+$urltest = $url . '?' . $paramsStr;
+echo $urltest . "\n"; // 反馈请带上此url
 
 /** 拼接参数结束 **/
 
@@ -87,16 +94,17 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-
+curl_setopt ($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $paramsStr);
 function read_header($ch, $header){
 	global $g_has_error;
 	
 	$comps = explode(":", $header);
-	// 正常返回的头部 Content-Type: audio/mp3
+	// 正常返回的头部 Content-Type: audio/*
 	// 有错误的如 Content-Type: application/json
 	if (count($comps) >= 2){
 		if (strcasecmp(trim($comps[0]), "Content-Type") == 0){
-			if (strpos($comps[1], "mp3") > 0 ){
+			if (strpos($comps[1], "audio/") > 0 ){
 				$g_has_error = false;
 			}else{
 				echo $header ." , has error \n";
@@ -114,7 +122,7 @@ if(curl_errno($ch))
 }
 curl_close($ch);
 
-$file = $g_has_error ? "result.txt" : "result.mp3";
+$file = $g_has_error ? "result.txt" : "result." . $format;
 file_put_contents($file, $data);
 echo "\n$file saved successed, please open it \n";
 

@@ -42,11 +42,14 @@
 
     // 发音人选择, 0为普通女声，1为普通男生，3为情感合成-度逍遥，4为情感合成-度丫丫，默认为普通女声
     private final int per = 0;
-    // 语速，取值0-9，默认为5中语速
+    // 语速，取值0-15，默认为5中语速
     private final int spd = 5;
-    // 音调，取值0-9，默认为5中语调
+    // 音调，取值0-15，默认为5中语调
     private final int pit = 5;
     // 音量，取值0-9，默认为5中音量
     private final int vol = 5;
+
+    // 下载的文件格式, 3：mp3(default) 4： pcm-16k 5： pcm-8k 6. wav
+    private final int aue = 6;
 ```
 

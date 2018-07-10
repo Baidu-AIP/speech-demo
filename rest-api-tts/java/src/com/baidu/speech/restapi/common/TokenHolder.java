@@ -18,9 +18,9 @@ public class TokenHolder {
     public static final String TTS_SCOPE = "audio_tts_post";
 
     /**
-     * url , Token的url，http可以改为https
+     * URL , Token的url，http可以改为https
      */
-    private static final String url = "http://openapi.baidu.com/oauth/2.0/token";
+    private static final String URL = "http://openapi.baidu.com/oauth/2.0/token";
 
     /**
      * asr的权限 scope 是  "audio_voice_assistant_get"
@@ -58,7 +58,6 @@ public class TokenHolder {
         this.scope = scope;
     }
 
-
     /**
      * 获取token，refresh 方法后调用有效
      *
@@ -76,10 +75,6 @@ public class TokenHolder {
     public long getExpiresAt() {
         return expiresAt;
     }
-
-
-
-
     /**
      * 获取token
      *
@@ -87,15 +82,15 @@ public class TokenHolder {
      * @throws IOException   http请求错误
      * @throws DemoException http接口返回不是 200, access_token未获取
      */
-    public void resfresh() throws IOException, DemoException {
-        String getTokenURL = url + "?grant_type=client_credentials"
+    public void refresh() throws IOException, DemoException {
+        String getTokenURL = URL + "?grant_type=client_credentials"
                 + "&client_id=" + ConnUtil.urlEncode(apiKey) + "&client_secret=" + ConnUtil.urlEncode(secretKey);
 
         // 打印的url出来放到浏览器内可以复现
-        System.out.println("token url:" + getTokenURL);
+        System.out.println("token URL:" + getTokenURL);
 
-        URL url = new URL(getTokenURL);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        URL urlconn = new URL(getTokenURL);
+        HttpURLConnection conn = (HttpURLConnection) urlconn.openConnection();
         conn.setConnectTimeout(5000);
         String result = ConnUtil.getResponseString(conn);
         System.out.println("Token result json:" + result);
@@ -114,7 +109,7 @@ public class TokenHolder {
         }
         if (!json.has("scope")) {
             // 返回没有scope字段
-            throw new DemoException("scopenot obtained, " + result);
+            throw new DemoException("scope not obtained, " + result);
         }
         if (!json.getString("scope").contains(scope)) {
             throw new DemoException("scope not exist, " + scope + "," + result);

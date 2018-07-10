@@ -10,6 +10,7 @@
 
 struct http_result {
     int has_error;
+	char *format; // 音频的格式，aue参数设置
     FILE *fp; // 保存结果的文件
 };
 

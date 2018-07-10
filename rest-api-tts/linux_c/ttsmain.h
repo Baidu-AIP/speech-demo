@@ -17,6 +17,8 @@ struct tts_config {
     int pit;
     int vol;
     int per;
+	int aue;
+	char format[4];
 };
 
 RETURN_CODE run();
