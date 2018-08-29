@@ -2,6 +2,7 @@
 
 import sys
 import json
+import time
 
 IS_PY3 = sys.version_info.major == 3
 
@@ -10,23 +11,29 @@ if IS_PY3:
     from urllib.request import Request
     from urllib.error import URLError
     from urllib.parse import urlencode
+    timer = time.perf_counter
 else:
     import urllib2
     from urllib2 import urlopen
     from urllib2 import Request
     from urllib2 import URLError
     from urllib import urlencode
+    if sys.platform == "win32":
+        timer = time.clock
+    else:
+        # On most other platforms the best timer is time.time()
+        timer = time.time
 
 API_KEY = '4E1BG9lTnlSeIf1NQFlrSq6h'
 SECRET_KEY = '544ca4657ba8002e3dea3ac2f5fdd241'
 
 # 需要识别的文件
-AUDIO_FILE = './pcm/16k.pcm'
+AUDIO_FILE = './pcm/16k.pcm' # 只支持 pcm/wav/amr
 # 文件格式
-FORMAT = 'wav';  # 文件后缀 pcm/wav/amr
+FORMAT = AUDIO_FILE[-3:];  # 文件后缀只支持 pcm/wav/amr
 
 # 根据文档填写PID，选择语言及识别模型
-DEV_PID = 1537;  # 1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+DEV_PID = 1536;  # 1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 
 CUID = '123456PYTHON';
 # 采样率
@@ -42,9 +49,6 @@ class DemoError(Exception):
 
 TOKEN_URL = 'http://openapi.baidu.com/oauth/2.0/token'
 SCOPE = 'audio_voice_assistant_get'  # 有此scope表示有asr能力，没有请在网页里勾选
-
-
-
 
 
 def fetch_token():
@@ -105,8 +109,10 @@ if __name__ == '__main__':
     # print post_data
     req = Request(ASR_URL + "?" + params_query, speech_data, headers)
     try:
+        begin =timer()
         f = urlopen(req)
         result_str = f.read()
+        print ("Request time cost %f" %(timer() - begin))
     except  URLError as err:
         print('asr http response http code : ' + str(err.code))
         result_str = err.read()
