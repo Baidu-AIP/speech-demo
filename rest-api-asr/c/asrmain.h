@@ -15,6 +15,8 @@ struct asr_config {
     int rate;
     int dev_pid;
     char cuid[20];
+    char scope[20];
+    char url[100];
 };
 
 extern const char ASR_SCOPE[];

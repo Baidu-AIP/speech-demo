@@ -22,9 +22,10 @@ PHP版本5.x 5.3以上
 
 ```php
 # 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-$apiKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
+$API_KEY =  "kVcnfD9iW2XVZSMaLMrtLYIz";
+
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-$secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
+$SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 ```
 
 
@@ -51,11 +52,9 @@ windows 下可能产生乱码，请打开result.txt
 
 ```php
 # 需要识别的文件
-$audio_file = "./16k.pcm";
+$AUDIO_FILE = "./16k_test.pcm";
 # 文件格式
-$format = "pcm"; // 文件后缀 pcm/wav/amr
-# 根据文档填写PID，选择语言及识别模型
-$dev_pid = 1537; //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+$FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式
 ```
 
 

@@ -13,8 +13,6 @@ import java.net.URL;
 public class TokenHolder {
 
 
-    public static final String ASR_SCOPE = "audio_voice_assistant_get";
-
     public static final String TTS_SCOPE = "audio_tts_post";
 
     /**
@@ -116,7 +114,9 @@ public class TokenHolder {
             // 返回没有scope字段
             throw new DemoException("scopenot obtained, " + result);
         }
-        if (!json.getString("scope").contains(scope)) {
+        // scope = null, 忽略scope检查
+
+        if (scope != null && !json.getString("scope").contains(scope)) {
             throw new DemoException("scope not exist, " + scope + "," + result);
         }
         token = json.getString("access_token");

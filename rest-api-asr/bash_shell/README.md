@@ -19,6 +19,7 @@ APPSECRET="94dc99566550d87f8fa8ece112xxxxx"
 ## 运行 asr.sh，进行识别
 ```bash
 sh asr.sh
+# 调试使用 sh -x asr.sh
 ```
 有如下返回
 
@@ -70,4 +71,13 @@ FILE="16k-23850.amr"
 FORMAT="amr"
 ```
 
-   ​
+
+### 收费版本测试
+打开下面2行的注释
+
+```bash
+# API_URL="https://vop.baidu.com/pro_api"
+# DEV_PID="80001"
+```
+
+

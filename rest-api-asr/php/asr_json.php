@@ -5,24 +5,39 @@ define('DEMO_CURL_VERBOSE', false); // 打印curl debug信息
 */
 
 # 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-$apiKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
+$API_KEY =  "WIwCsDId1gu31Guxx5F8V8IB";
+
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-$secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
+$SECRET_KEY = "jALOfBYo0rmYnXUMZUhFAEUERuseheZ7";
+
 
 # 需要识别的文件
-$audio_file = "./16k.pcm";
+$AUDIO_FILE = "./16k_test.pcm";
 # 文件格式
-$format = "pcm"; // 文件后缀 pcm/wav/amr
 
-# 根据文档填写PID，选择语言及识别模型
-$dev_pid = 1537; //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+$FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式
 
-$cuid = "123456PHP";
+$CUID = "123456PHP";
 # 采样率
-$rate = 16000;  // 固定值
+$RATE = 16000;  // 固定值
+
+// 免费版
+$ASR_URL = "http://vop.baidu.com/server_api";
+# 根据文档填写PID，选择语言及识别模型
+$DEV_PID = 1537; //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+$SCOPE = 'audio_voice_assistant_get'; // 有此scope表示有语音识别免费版能力，没有请在网页里开通语音识别能力
+
+// 收费版打开以下信息 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版
+$ASR_URL = "https://vop.baidu.com/pro_api";
+$DEV_PID = 80001; 
+$SCOPE = 'brain_enhanced_asr';  // 有此scope表示有收费极速版能力，没有请在网页里开通极速版
+
+$SCOPE = false; // 部分历史应用没有加入scope，设为false忽略检查
+
 /** 公共模块获取token开始 */
 
-$auth_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$apiKey."&client_secret=".$secretKey;
+
+$auth_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$API_KEY."&client_secret=".$SECRET_KEY;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $auth_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -49,8 +64,8 @@ if (!isset($response['scope'])){
 	exit(2);
 }
 
-if (!in_array('audio_voice_assistant_get',explode(" ", $response['scope']))){
-	echo "DO NOT have asr permission\n";
+if ($SCOPE && !in_array($SCOPE, explode(" ", $response['scope']))){
+	echo "CHECK SCOPE ERROR\n";
 	// 请至网页上应用内开通语音识别权限
 	exit(3);
 }
@@ -61,18 +76,16 @@ echo "token = $token ; expireInSeconds: ${response['expires_in']}\n\n";
 /** 公共模块获取token结束 */
 
 /** 拼接参数开始 **/
-$audio = file_get_contents($audio_file);
+$audio = file_get_contents($AUDIO_FILE);
 $base_data = base64_encode($audio);
 $params = array(
-	"dev_pid" => $dev_pid,
-	"format" => $format,
-	"rate" => $rate,
+	"dev_pid" => $DEV_PID,
+	"format" => $FORMAT,
+	"rate" => $RATE,
 	"token" => $token,
-	"cuid"=> $cuid,
+	"cuid"=> $CUID,
 	"speech" => $base_data,
 	"len" => strlen($audio),
-	//"url" => "http://www.xxx.com/sample.pcm",
-	//"callback" => "http://www.xxx.com/audio/callback", // url及callback参数代替 len和data，不建议使用
 	"channel" => 1,
 );
 
@@ -82,11 +95,10 @@ $headers[] = 'Content-Type: application/json; charset=utf-8';
 
 /** 拼接参数结束 **/
 	
-	
-$url = "http://vop.baidu.com/server_api";
+/** asr 请求开始 **/
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_URL, $ASR_URL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_POST, true);
@@ -101,7 +113,17 @@ if(curl_errno($ch))
 	exit (2);
 }
 curl_close($ch);
+/** asr 请求结束 **/
+
+// 打印请求参数
+echo 'url is : ' . $ASR_URL . "\n";
+$params['speech'] = 'base64_encode(file_get_contents($AUDIO_FILE))'; 
+echo 'params is :' . json_encode($params) . "\n";
+
+// 打印百度返回的结果
 echo "asr result $res\n";
+
+// 解析结果
 $response = json_decode($res, true);
 
 if (isset($response['err_no']) && $response['err_no'] == 0){
@@ -109,6 +131,8 @@ if (isset($response['err_no']) && $response['err_no'] == 0){
 }else{
 	echo "asr has error\n";
 }
+
+
 // windows命令行遇见乱码可打开文件result.txt, 使用如notepad++等软件打开
 echo "response is also saved into result.txt in UTF-8\n ";
 file_put_contents("result.txt", $res);

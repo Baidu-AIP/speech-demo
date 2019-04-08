@@ -4,10 +4,23 @@ java 调用rest api识别接口
 
 
 
+##代码目录
+项目为gradle项目，实际的java代码放在```java\src\main\java```目录下
+
+AsrMain.java为主类，放在```java\src\main\java\com\baidu\speech\restapi\asrdemo```目录下
+
+
+
+
+
 
 ## 测试流程
 
-src目录下的文件及测试音频放置ide中，修改AsrMain.java的文件，运行即可。
+以下3个方法三选一均可测试
+
+1. src目录下的文件及测试音频放置ide中，修改AsrMain.java的文件，运行即可。
+2. 直接以IDEA IDE项目打开
+3. 运行 sh gradlew run -Dfile.encoding=UTF-8 ; windows 下 gradlew run -Dfile.encoding=UTF-8
 
 
 
@@ -17,10 +30,10 @@ src目录下的文件及测试音频放置ide中，修改AsrMain.java的文件�
 
 ```java
     //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-    private final String appKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
+    private final String APP_KEY = "kVcnfD9iW2XVZSMaLMrtLYIz";
 
-    // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    private final String secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
+    // 填写网页上申请的APP SECRET 如 $SECRET_KEY="94dc99566550d87f8fa8ece112xxxxx"
+    private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 ```
 
 
@@ -29,7 +42,7 @@ src目录下的文件及测试音频放置ide中，修改AsrMain.java的文件�
 ## 运行AsrMain中main方法，进行识别
 
 ```java
-public boolean methodRaw = false; // 默认以json方式上传音频文件
+private final boolean METHOD_RAW = false; // 默认以json方式上传音频文件
 ```
 
 
@@ -49,13 +62,12 @@ public boolean methodRaw = false; // 默认以json方式上传音频文件
 
 ```java
 // 需要识别的文件
-private final String filename = "16k_test.pcm";
+private final String FILENAME = "16k_test.pcm";
 
-// 文件格式
-private final String format = "pcm";
+// 文件格式, 只支持pcm/wav/amr
+private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
 
-//  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
-private final int dev_pid = 1537;
+DEV_PID = 1537;
 ```
 
 
@@ -63,18 +75,31 @@ private final int dev_pid = 1537;
 1. 如测试英语 修改为:
 
 ```bash
-$dev_pid = 1737;
+DEV_PID = 1737;
 ```
 
 2. 如测试采样率为16k 的amr文件16k-23850.amr，修改为：
 
 ```java
 // 需要识别的文件
-private final String filename = "16k-23850.amr";
+private final String FILENAME = "16k-23850.amr";
 
-// 文件格式
-private final String format = "amr";
 
 ```
 
    ​
+
+## 测试付费极速版
+
+
+
+打开下面的注释：
+
+```java
+{
+        URL =   "http://vop.baidu.com/pro_api"; // 可以改为https
+        DEV_PID = 80001;
+        SCOPE = "brain_enhanced_asr";
+    }
+```
+

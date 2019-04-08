@@ -15,7 +15,8 @@
 yum install libcurl-devel
 
 # linux ubuntu 一般已经安装
-apt-get install libcurl3
+apt-get install libcurl3-dev 
+# 或 apt-get install libcurl4-openssl-dev
 
 #cygwin
 #运行setup-x86_64.exe，输入libcurl-devel搜索
@@ -47,7 +48,14 @@ apt-get  install  build-essential
 
 cd  项目目录
 
-sh build_and_asr.sh  编译及运行
+以下三种方式选择一种运行即可
+
+1. sh build_and_asr.sh  编译及运行
+
+2. mkdir build && cd build && cmake .. && make && cd .. && build/restapi_asr
+3. 从Clion IDE中打开运行
+
+
 
 ### 修改asrmain.c
 
@@ -56,10 +64,11 @@ sh build_and_asr.sh  编译及运行
 ```c
 
 static RETURN_CODE fill_config(struct asr_config *config) {
-    // 填写网页上申请的appkey 如 g_api_key="g8eBUMSokVB1BHGmgxxxxxx"
-    char api_key[] = "4E1BG9lTnlSeIf1NQFlrSq6h";
+     // 填写网页上申请的appkey 如 g_api_key="g8eBUMSokVB1BHGmgxxxxxx"
+    char api_key[] = "kVcnfD9iW2XVZSMaLMrtLYIz";
     // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    char secret_key[] = "544ca4657ba8002e3dea3ac2f5fdd241";
+    char secret_key[] = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
+
 ```
 
 
@@ -77,9 +86,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
     ...
     // 需要识别的文件
     char *filename = "16k_test.pcm";
-    // 文件后缀 pcm/wav/amr ,不支持其它格式
-    char format[] = "pcm";
-    
+
     //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型 其它语种参见文档
     int dev_pid = 1537;
 ```
@@ -97,8 +104,24 @@ int dev_pid = 1737;
 ```c
 // 需要识别的文件
 char *filename = "16k-23850.amr";
+
 // 文件后缀 pcm/wav/amr ,不支持其它格式
-char format[] = "amr";
+char *format = filename + strlen(filename) - 3;
 ```
 
    ​
+
+
+
+## 收费极速版
+
+打开以下注释：
+
+```c
+ /* 收费极速版
+    url = "http://vop.baidu.com/pro_api"; // 可改为https
+    dev_pid = 80001;
+    scope = "brain_enhanced_asr"; // 有此scope表示有收费极速版能力，没有请在网页里开通极速版
+    */
+```
+

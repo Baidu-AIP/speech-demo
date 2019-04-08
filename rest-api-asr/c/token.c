@@ -56,17 +56,19 @@ RETURN_CODE parse_token(const char *response, const char *scope, char *token) {
     }
 
     // ==== 检查scope =========
-    char scopes[300];
-    res = obtain_json_str(response, "scope", scopes, 300);
+    char scopes[400];
+    res = obtain_json_str(response, "scope", scopes, 400);
     if (res != RETURN_OK) {
         snprintf(g_demo_error_msg, BUFFER_ERROR_SIZE, "parse scope error: %s\n", response);
         return ERROR_TOKEN_PARSE_ACCESS_TOKEN;
     }
-    char *scope_pos = strstr(scopes, scope);
-    if (scope_pos == NULL) {
-        snprintf(g_demo_error_msg, BUFFER_ERROR_SIZE, "scope： %s not exist in:%s \n", scope,
-                 response);
-        return ERROR_TOKEN_PARSE_SCOPE;
+    if (strlen(scope) > 0) {
+        char *scope_pos = strstr(scopes, scope);
+        if (scope_pos == NULL) {
+            snprintf(g_demo_error_msg, BUFFER_ERROR_SIZE, "scope： %s not exist in:%s \n", scope,
+                     response);
+            return ERROR_TOKEN_PARSE_SCOPE;
+        }
     }
     return RETURN_OK;
 }

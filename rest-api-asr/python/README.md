@@ -74,3 +74,18 @@ FORMAT = "amr"; // 文件后缀 pcm/wav/amr
 ```
 
    
+
+## 测试收费极速版
+
+打开下面的注释
+
+```python
+# 收费极速版
+
+DEV_PID = 80001
+ASR_URL = 'https://vop.baidu.com/pro_api'
+SCOPE = 'brain_enhanced_asr'  # 有此scope表示有收费极速版能力，没有请在网页里开通极速版
+
+
+```
+

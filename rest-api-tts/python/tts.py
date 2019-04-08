@@ -21,7 +21,7 @@ else:
 API_KEY = '4E1BG9lTnlSeIf1NQFlrSq6h'
 SECRET_KEY = '544ca4657ba8002e3dea3ac2f5fdd241'
 
-TEXT = "欢迎使用百度语音合成。";
+TEXT = "欢迎使用百度语音合成。"
 
 # 发音人选择, 0为普通女声，1为普通男生，3为情感合成-度逍遥，4为情感合成-度丫丫，默认为普通女声
 PER = 4
@@ -95,13 +95,14 @@ if __name__ == '__main__':
     print('test on Web Browser' + TTS_URL + '?' + data)
 
     req = Request(TTS_URL, data.encode('utf-8'))
-
     has_error = False
     try:
         f = urlopen(req)
         result_str = f.read()
 
-        has_error = ('Content-Type' not in f.headers.keys() or f.headers['Content-Type'].find('audio/') < 0)
+        headers = dict((name.lower(), value) for name, value in f.headers.items())
+
+        has_error = ('content-type' not in headers.keys() or headers['content-type'].find('audio/') < 0)
     except  URLError as err:
         print('asr http response http code : ' + str(err.code))
         result_str = err.read()

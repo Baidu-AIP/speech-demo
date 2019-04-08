@@ -14,6 +14,54 @@ import java.net.URL;
 
 public class AsrMain {
 
+    private final boolean METHOD_RAW = false; // 默认以json方式上传音频文件
+
+    //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
+    private final String APP_KEY = "kVcnfD9iW2XVZSMaLMrtLYIz";
+
+    // 填写网页上申请的APP SECRET 如 $SECRET_KEY="94dc99566550d87f8fa8ece112xxxxx"
+    private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
+
+    // 需要识别的文件
+    private final String FILENAME = "16k_test.pcm";
+
+    // 文件格式, 只支持pcm/wav/amr
+    private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
+
+
+    private String CUID = "1234567JAVA";
+
+    // 采样率固定值
+    private final int RATE = 16000;
+
+    private String URL;
+
+    private int DEV_PID;
+
+    private String SCOPE;
+
+    //  免费版 参数
+    {
+        URL =   "http://vop.baidu.com/server_api"; // 可以改为https
+        //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
+        DEV_PID = 1537;
+        SCOPE = "audio_voice_assistant_get";
+    }
+
+    /* 付费极速版 参数
+    {
+        URL =   "http://vop.baidu.com/pro_api"; // 可以改为https
+        DEV_PID = 80001;
+        SCOPE = "brain_enhanced_asr";
+    }
+    */
+
+    /* 忽略scope检查，非常旧的应用可能没有
+    {
+        SCOPE = null;
+    }
+    */
+
     public static void main(String[] args) throws IOException, DemoException {
         AsrMain demo = new AsrMain();
         // 填写下面信息
@@ -22,36 +70,13 @@ public class AsrMain {
         System.out.println(result);
     }
 
-    //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-    private final String appKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
-
-    // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    private final String secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
-
-    // 需要识别的文件
-    private final String filename = "16k_test.pcm";
-
-    // 文件格式
-    private final String format = "pcm";
-
-    //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
-    private final int dev_pid = 1537;
-
-    private String cuid = "1234567JAVA";
- 
- // 采样率固定值
-    private final int rate = 16000;
-	
-    public boolean methodRaw = false; // 默认以json方式上传音频文件
-
-    private final String url = "http://vop.baidu.com/server_api"; // 可以改为https
 
     public String run() throws IOException, DemoException {
-        TokenHolder holder = new TokenHolder(appKey, secretKey, TokenHolder.ASR_SCOPE);
+        TokenHolder holder = new TokenHolder(APP_KEY, SECRET_KEY, SCOPE);
         holder.resfresh();
         String token = holder.getToken();
         String result = null;
-        if (methodRaw) {
+        if (METHOD_RAW) {
             result = runRawPostMethod(token);
         } else {
             result = runJsonPostMethod(token);
@@ -60,37 +85,40 @@ public class AsrMain {
     }
 
     private String runRawPostMethod(String token) throws IOException, DemoException {
-        String url2 = url + "?cuid=" + ConnUtil.urlEncode(cuid) + "&dev_pid=" + dev_pid + "&token=" + token;
+        String url2 = URL + "?cuid=" + ConnUtil.urlEncode(CUID) + "&dev_pid=" + DEV_PID + "&token=" + token;
+        String contentTypeStr = "audio/" + FORMAT + "; rate=" + RATE;
         //System.out.println(url2);
-        byte[] content = getFileContent(filename);
+        byte[] content = getFileContent(FILENAME);
         HttpURLConnection conn = (HttpURLConnection) new URL(url2).openConnection();
         conn.setConnectTimeout(5000);
-        conn.setRequestProperty("Content-Type", "audio/" + format + "; rate=" + rate);
+        conn.setRequestProperty("Content-Type", contentTypeStr);
         conn.setRequestMethod("POST");
         conn.setDoOutput(true);
         conn.getOutputStream().write(content);
         conn.getOutputStream().close();
+        System.out.println("url is " + url2);
+        System.out.println("header is  " + "Content-Type :" + contentTypeStr);
         String result = ConnUtil.getResponseString(conn);
         return result;
     }
 
     public String runJsonPostMethod(String token) throws DemoException, IOException {
 
-        byte[] content = getFileContent(filename);
+        byte[] content = getFileContent(FILENAME);
         String speech = base64Encode(content);
 
         JSONObject params = new JSONObject();
-        params.put("dev_pid", dev_pid);
-        params.put("format", format);
-        params.put("rate", rate);
+        params.put("dev_pid", DEV_PID);
+        params.put("format", FORMAT);
+        params.put("rate", RATE);
         params.put("token", token);
-        params.put("cuid", cuid);
+        params.put("cuid", CUID);
         params.put("channel", "1");
         params.put("len", content.length);
         params.put("speech", speech);
 
         // System.out.println(params.toString());
-        HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+        HttpURLConnection conn = (HttpURLConnection) new URL(URL).openConnection();
         conn.setConnectTimeout(5000);
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
@@ -98,6 +126,13 @@ public class AsrMain {
         conn.getOutputStream().write(params.toString().getBytes());
         conn.getOutputStream().close();
         String result = ConnUtil.getResponseString(conn);
+
+
+        params.put("speech", "base64Encode(getFileContent(FILENAME))");
+        System.out.println("url is : " + URL);
+        System.out.println("params is :" + params.toString());
+
+
         return result;
     }
 

@@ -11,6 +11,7 @@ if IS_PY3:
     from urllib.request import Request
     from urllib.error import URLError
     from urllib.parse import urlencode
+
     timer = time.perf_counter
 else:
     import urllib2
@@ -18,37 +19,50 @@ else:
     from urllib2 import Request
     from urllib2 import URLError
     from urllib import urlencode
+
     if sys.platform == "win32":
         timer = time.clock
     else:
         # On most other platforms the best timer is time.time()
         timer = time.time
 
-API_KEY = '4E1BG9lTnlSeIf1NQFlrSq6h'
-SECRET_KEY = '544ca4657ba8002e3dea3ac2f5fdd241'
+API_KEY = 'kVcnfD9iW2XVZSMaLMrtLYIz'
+SECRET_KEY = 'O9o1O213UgG5LFn0bDGNtoRN3VWl2du6'
 
 # 需要识别的文件
-AUDIO_FILE = './pcm/16k.pcm' # 只支持 pcm/wav/amr
+AUDIO_FILE = './pcm/16k.pcm'  # 只支持 pcm/wav/amr
 # 文件格式
 FORMAT = AUDIO_FILE[-3:];  # 文件后缀只支持 pcm/wav/amr
-
-# 根据文档填写PID，选择语言及识别模型
-DEV_PID = 1536;  # 1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 
 CUID = '123456PYTHON';
 # 采样率
 RATE = 16000;  # 固定值
 
-ASR_URL = 'http://vop.baidu.com/server_api'
+# 免费版
 
+DEV_PID = 1536;  # 1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。根据文档填写PID，选择语言及识别模型
+ASR_URL = 'http://vop.baidu.com/server_api'
+SCOPE = 'audio_voice_assistant_get'  # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有
+
+# 收费极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版
+
+#DEV_PID = 80001
+#ASR_URL = 'https://vop.baidu.com/pro_api'
+#SCOPE = 'brain_enhanced_asr'  # 有此scope表示有asr能力，没有请在网页里开通极速版
+
+# 忽略scope检查，非常旧的应用可能没有
+# SCOPE = False
+
+
+# 收费极速版
 
 class DemoError(Exception):
     pass
 
+
 """  TOKEN start """
 
 TOKEN_URL = 'http://openapi.baidu.com/oauth/2.0/token'
-SCOPE = 'audio_voice_assistant_get'  # 有此scope表示有asr能力，没有请在网页里勾选
 
 
 def fetch_token():
@@ -72,7 +86,7 @@ def fetch_token():
     result = json.loads(result_str)
     print(result)
     if ('access_token' in result.keys() and 'scope' in result.keys()):
-        if not SCOPE in result['scope'].split(' '):
+        if SCOPE and (not SCOPE in result['scope'].split(' ')):  # SCOPE = False 忽略检查
             raise DemoError('scope is not correct')
         print('SUCCESS WITH TOKEN: %s ; EXPIRES IN SECONDS: %s' % (result['access_token'], result['expires_in']))
         return result['access_token']
@@ -106,13 +120,16 @@ if __name__ == '__main__':
         'Content-Length': length
     }
 
+    url = ASR_URL + "?" + params_query
+    print("url is", url);
+    print("header is", headers)
     # print post_data
     req = Request(ASR_URL + "?" + params_query, speech_data, headers)
     try:
-        begin =timer()
+        begin = timer()
         f = urlopen(req)
         result_str = f.read()
-        print ("Request time cost %f" %(timer() - begin))
+        print("Request time cost %f" % (timer() - begin))
     except  URLError as err:
         print('asr http response http code : ' + str(err.code))
         result_str = err.read()

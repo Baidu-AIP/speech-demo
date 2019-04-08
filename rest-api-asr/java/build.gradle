@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+plugins {
+    id 'application'
+}
+
+group 'com.baidu.speech.restapi.demo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+mainClassName = 'com.baidu.speech.restapi.asrdemo.AsrMain'
