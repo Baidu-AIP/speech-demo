@@ -5,10 +5,10 @@ define('DEMO_CURL_VERBOSE', false); // 打印curl debug信息
 */
 
 # 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-$API_KEY =  "WIwCsDId1gu31Guxx5F8V8IB";
+$API_KEY =  "kVcnfD9iW2XVZSMaLMrtLYIz";
 
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-$SECRET_KEY = "jALOfBYo0rmYnXUMZUhFAEUERuseheZ7";
+$SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 
 
 # 需要识别的文件

@@ -2,7 +2,7 @@
 
 使用python脚本方式测试rest api 识别接口
 
-- 支持python 2.7 及 python 3.7+
+- 支持python 2.7 及 python 3.7+, 其它版本自行测试
 
 
 
