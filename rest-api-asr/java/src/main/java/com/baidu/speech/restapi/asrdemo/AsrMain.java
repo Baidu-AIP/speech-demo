@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -42,7 +43,7 @@ public class AsrMain {
 
     //  免费版 参数
     {
-        URL =   "http://vop.baidu.com/server_api"; // 可以改为https
+        URL = "http://vop.baidu.com/server_api"; // 可以改为https
         //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
         DEV_PID = 1537;
         SCOPE = "audio_voice_assistant_get";
@@ -68,6 +69,13 @@ public class AsrMain {
         String result = demo.run();
         System.out.println("识别结束：结果是：");
         System.out.println(result);
+
+        // 如果显示乱码，请打开result.txt查看
+        File file = new File("result.txt");
+        FileWriter fo = new FileWriter(file);
+        fo.write(result);
+        fo.close();
+        System.out.println("Result also wrote into " + file.getAbsolutePath());
     }
 
 
