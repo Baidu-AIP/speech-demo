@@ -22,7 +22,7 @@ AsrMain.java为主类，放在```java\src\main\java\com\baidu\speech\restapi\asr
 2. 直接以IDEA IDE项目打开
 3. 运行 sh gradlew run -Dfile.encoding=UTF-8 ; windows 下 gradlew run -Dfile.encoding=UTF-8
 
-### 如果您选择第1个方式，可以新建一个helloworld项目，
+#### 如果您选择第1个方式，可以新建一个helloworld项目，
 1） 测试helloworld 通过
 2） 将java\src\main\java目录下的 com和org整体复制到Main.java(helloworld的代码）同一级目录。
 3） 16k_test.pcm 放置项目的根目录
