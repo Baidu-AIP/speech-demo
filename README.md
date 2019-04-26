@@ -9,6 +9,7 @@
 百度语音rest api 调用语音识别，语音合成示例
 
 Rest API 接口为http 访问， 任意操作系统，任意语言，只要能对baidu域名发起http请求的，均可以使用。
+百度语音合成的接口支持跨域，但是获取token的接口不支持。浏览器直接发请求的示例见：https://github.com/Baidu-AIP/SPEECH-TTS-CORS
 
 ## 简介
 
