@@ -18,10 +18,15 @@ AsrMain.java为主类，放在```java\src\main\java\com\baidu\speech\restapi\asr
 
 以下3个方法三选一均可测试
 
-1. src目录下的文件及测试音频放置ide中，修改AsrMain.java的文件，运行即可。
+1. java\src\main\java目录下的文件及测试音频 	16k_test.pcm放置ide中，修改AsrMain.java的文件，运行即可。
 2. 直接以IDEA IDE项目打开
 3. 运行 sh gradlew run -Dfile.encoding=UTF-8 ; windows 下 gradlew run -Dfile.encoding=UTF-8
 
+#### 如果您选择第1个方式，可以新建一个helloworld项目，
+1） 测试helloworld 通过
+2） 将java\src\main\java目录下的 com和org整体复制到Main.java(helloworld的代码）同一级目录。
+3） 16k_test.pcm 放置项目的根目录
+4） 选择com/baidu/speech/restapi/asrdemo/AsrMain.java 运行
 
 
 ### 修改AsrMain.java
