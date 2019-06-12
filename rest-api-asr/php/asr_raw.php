@@ -76,7 +76,7 @@ echo "token = $token ; expireInSeconds: ${response['expires_in']}\n\n";
 /** 拼接参数开始 **/
 $audio = file_get_contents($AUDIO_FILE);
 	
-$url = "http://vop.baidu.com/server_api?cuid=".$CUID."&token=".$token;
+$url = "http://vop.baidu.com/server_api?cuid=".$CUID. "&token=" . $token . "&dev_pid=" . $DEV_PID;
 $headers[] = "Content-Length: ".strlen($audio);
 $headers[] = "Content-Type: audio/$FORMAT; rate=$RATE";
 
