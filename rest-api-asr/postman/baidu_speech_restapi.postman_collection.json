@@ -44,6 +44,26 @@
 				"description": "使用申请的appkey和appSecret换取token"
 			},
 			"response": []
+		},
+		{
+			"name": "asr_raw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://vop.baidu.com/server_api",
+					"protocol": "https",
+					"host": [
+						"vop",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"server_api"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
