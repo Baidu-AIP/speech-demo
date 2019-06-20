@@ -1,9 +1,8 @@
-## 
-
+## 简介
 
 使用postman 脚本方式测试rest api 识别接口
 
-示例postman版本
+示例postman版本 v7.2.1
 
 ## 测试流程
 
@@ -14,15 +13,12 @@
 ### 填写鉴权信息获取token
 
 获取AccessToken 需要您在应用管理界面中新建应用，应用列表中即可查看。 开放平台上： 
-http://bos.nj.bpc.baidu.com/v1/agroup/371599f441b47a29b63efd6d86e23c16df396223
 ```
 # 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
 $API_KEY =  "kVcnfD9iW2XVZSMaLMrtLYIz";
 
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
 $SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
-
-![测试图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/20190612154652.jpg)
         
 ```
 
