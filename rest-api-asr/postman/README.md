@@ -1,8 +1,12 @@
 ## 简介
 
-使用postman 脚本方式测试rest api 识别接口
+文档介绍使用postman 脚本方式调用 rest api 识别接口 
 
-示例postman版本 v7.2.1
+Postman是很好用的一款API/接口功能测试工具，很方便的塞数据，查看响应，设置检查点/断言，能进行一定程度上的自动化测试，但是不要指望它能代替你进行性能测试，一次批量执行太多太久的话容易崩溃掉。
+
+poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下载
+示例 postman版本： v7.2.2
+
 
 ## 测试流程
 
@@ -10,23 +14,21 @@
 
 
 
-### 填写鉴权信息获取token
+###  填写鉴权信息获取token
 
 获取AccessToken 需要您在应用管理界面中新建应用，应用列表中即可查看。 开放平台上： 
 ```
-# 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-$API_KEY =  "kVcnfD9iW2XVZSMaLMrtLYIz";
+![img](http://bos.nj.bpc.baidu.com/v1/agroup/371599f441b47a29b63efd6d86e23c16df396223)
 
-# 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-$SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
-        
 ```
 
-一. 打开Postman 点击左上角+号
-修改上传方式为POST，re'quest url 填写 https://openapi.baidu.com/oauth/2.0/token
-然后再下方Params 填写grant_type ，client_id， client_secret及其对应的VALUE（如下图）点击Send 获取token
+1. 打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的postman_collection.json 文件。
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191700%20.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201400.png)
+
+2. 点击左侧导入的Token，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
+
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201401.png)
 
 Access Token 有效期为30天，开发者需要对 Access Token的有效性进行判断，如果Access Token过期可以重新获取。
 
@@ -44,15 +46,7 @@ Access Token 有效期为30天，开发者需要对 Access Token的有效性进�
 | 语音识别       | http://vop.baidu.com/server_api https://vop.baidu.com/server_api http://vop.baidubce.com/server_api (服务端部署在百度云时，调用该地址可免外网流量费用，且返回识别结果速度更快) |
 | 语音识别极速版 | https://vop.baidu.com/pro_api                                |
 
-## 文件样例
 
-推荐16K采样率 pcm文件
-
-- [16k 采样率pcm文件样例下载](http://speech-doc.gz.bcebos.com/rest-api-asr/public_audio/16k.pcm)
-
-- [16k 采样率wav文件样例下载](http://speech-doc.gz.bcebos.com/rest-api-asr/public_audio/16k.wav)
-
-- [16k 采样率amr文件样例下载](http://speech-doc.gz.bcebos.com/rest-api-asr/public_audio/16k-23850.amr)
 
   
 
@@ -62,22 +56,15 @@ Access Token 有效期为30天，开发者需要对 Access Token的有效性进�
 
 即 raw格式POST上传本地文件 语音数据直接放在 HTTP BODY 中，控制参数以及相关统计信息通过 header和url里参数传递。
 
-1.点击左上角+号
-修改上传方式为POST，re'quest url 填写 http://vop.baidu.com/server_api （如下图）
+1.点击之前左侧导入的Token，选择第二个POST asr ，在Params下替换刚才获取的token的值，如下图
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191705.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201402.png)
 
-2.在下方Params 填写dev_pid，cuid， token及其对应的VALUE
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191710.png)
+3.在 Body 下方的binary 删除原来的文件名，点击Select File，选择官方的pcm音频文件，最后点击Send （如下图）
 
-3.在 Header 下方填写Content-Type及其对应的VALUE audio/pcm;rate=16000）（如下图）
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201403.png)
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191715.png)
-
-4.在Body下 选择binary 然后上传官方测试音频 16k.pcm 最后点击Send 获取识别结果
-
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191720.png)
 
 结果如：
 ```json
@@ -92,24 +79,7 @@ Access Token 有效期为30天，开发者需要对 Access Token的有效性进�
 }
 ```
 
-### 测试其它音频文件
+如何替换替换自己的AK SK已经其他参数，请参考文档 更换测试参数文档
 
-修改以下参数：
-
-
-1. 如测试英语 修改为:
-
-```Params下
-dev_pid 的value 更改为 1737;
-```
-
-1. 如测试采样率为16k 的amr文件16k-23850.amr，更改为：
-
-```
-# 上传需要识别的文件
-
-# 文件格式
-audio/amr;rate=16000; // 文件后缀 pcm/wav/amr
-```
 
 
