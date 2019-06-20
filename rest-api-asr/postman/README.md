@@ -18,7 +18,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 获取AccessToken 需要您在应用管理界面中新建应用，应用列表中即可查看。 开放平台上： 
 ```
-![img](http://bos.nj.bpc.baidu.com/v1/agroup/371599f441b47a29b63efd6d86e23c16df396223)
+![img](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201700.png)
 
 ```
 
