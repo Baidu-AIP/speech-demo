@@ -22,7 +22,7 @@ $SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
         
 ```
 
-打开Postman 点击左上角+号
+一. 打开Postman 点击左上角+号
 修改上传方式为POST，re'quest url 填写 https://openapi.baidu.com/oauth/2.0/token
 然后再下方Params 填写grant_type ，client_id， client_secret及其对应的VALUE（如下图）点击Send 获取token
 
@@ -58,19 +58,27 @@ Access Token 有效期为30天，开发者需要对 Access Token的有效性进�
 
   
 
-## 示例选择Raw 方式上传
+## Raw 方式上传
 
 即 raw格式POST上传本地文件 语音数据直接放在 HTTP BODY 中，控制参数以及相关统计信息通过 header和url里参数传递。
 
-点击左上角+号
+1.点击左上角+号
 修改上传方式为POST，re'quest url 填写 http://vop.baidu.com/server_api （如下图）
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191705.png)
-然后再下方Params 填写dev_pid，cuid， token及其对应的VALUE
+
+2.在下方Params 填写dev_pid，cuid， token及其对应的VALUE
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191710.png)
-Header 下方填写Content-Type及其对应的VALUE audio/pcm;rate=16000）（如下图）
+
+3.在 Header 下方填写Content-Type及其对应的VALUE audio/pcm;rate=16000）（如下图）
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191715.png)
-Body下 选择binary 然后上传官方测试音频 16k.pcm 最后点击Send 获取识别结果
+
+4.在Body下 选择binary 然后上传官方测试音频 16k.pcm 最后点击Send 获取识别结果
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191720.png)
+
 结果如：
 ```json
 {
