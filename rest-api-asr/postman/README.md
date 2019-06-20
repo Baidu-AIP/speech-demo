@@ -26,7 +26,7 @@ $SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 修改上传方式为POST，re'quest url 填写 https://openapi.baidu.com/oauth/2.0/token
 然后再下方Params 填写grant_type ，client_id， client_secret及其对应的VALUE（如下图）点击Send 获取token
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191700.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906191700%20.png)
 
 Access Token 有效期为30天，开发者需要对 Access Token的有效性进行判断，如果Access Token过期可以重新获取。
 
