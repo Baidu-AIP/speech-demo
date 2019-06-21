@@ -61,7 +61,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 }
 ```
 
-如何替换替换自己的AK SK已经其他参数，请参考文档 更换测试参数(https://github.com/Baidu-AIP/speech-demo/blob/master/rest-api-asr/postman/%E6%9B%B4%E6%8D%A2%E6%B5%8B%E8%AF%95%E5%8F%82%E6%95%B0.md) 文档
+如何替换替换自己的AK SK已经其他参数，请参考文档   <a href="/更换测试参数.md">更换测试参数 </a>文档
 
 
 
