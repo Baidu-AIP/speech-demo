@@ -61,7 +61,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 }
 ```
 
-如何替换替换自己的AK SK已经其他参数，请参考文档   <a href="/更换测试参数.md">更换测试参数 </a>文档
+如何替换替换自己的AK SK已经其他参数，请参考文档   <a href="/rest-api-asr/postman/更换测试参数.md">更换测试参数 </a>文档
 
 
 
