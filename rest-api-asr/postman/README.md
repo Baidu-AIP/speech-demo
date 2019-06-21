@@ -11,8 +11,8 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 ## 测试流程
 
-首先在您创建的应用中查找Api Key 和 SecretKey。访问https://openapi.baidu.com/oauth/2.0/token 换取 token；
-利用换取的token，并填写必要参数调用本接口
+使用postman打开json文件 通过client_id和client_secret获取 token；
+利用获得的token，并填写必要参数和上传需要识别的音频文件 调用语音识别接口
 
 
 
@@ -66,7 +66,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 }
 ```
 
-即 raw格式POST上传本地文件 语音数据直接放在 HTTP BODY 中，控制参数以及相关统计信息通过 header和url里参数传递。
+小结： raw格式POST上传本地文件 语音数据直接放在 HTTP BODY 中，控制参数以及相关统计信息通过 header和url里参数传递。
 
 如何替换替换自己的AK SK以及其他参数，请参考文档   <a href="/rest-api-asr/postman/更换测试参数.md">更换测试参数 </a>文档
 
