@@ -5,12 +5,14 @@
 Postman是很好用的一款API/接口功能测试工具，很方便的塞数据，查看响应，设置检查点/断言，能进行一定程度上的自动化测试，但是不要指望它能代替你进行性能测试，一次批量执行太多太久的话容易崩溃掉。
 
 poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下载
+
 示例 postman版本： v7.2.2
 
 
 ## 测试流程
 
-选择JSON方式上传或者Raw 方式上传之一进行测试，本文以Raw 方式上传为例，以下文档同样适用于JSON方式上传
+首先在您创建的应用中查找Api Key 和 SecretKey。访问https://openapi.baidu.com/oauth/2.0/token 换取 token；
+利用换取的token，并填写必要参数调用本接口
 
 
 
@@ -29,7 +31,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201401.png)
 
-Access Token 有效期为30天，开发者需要对 Access Token的有效性进行判断，如果Access Token过期可以重新获取。
+
   
 
 ## Raw 方式上传
