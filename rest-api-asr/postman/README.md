@@ -26,7 +26,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 1. 打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的postman_collection.json 文件。
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201400.png)
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/2019062014001.png)
+
 2. 点击左侧导入的Token，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201401.png)
@@ -61,7 +61,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 }
 ```
 
-如何替换替换自己的AK SK已经其他参数，请参考文档   <a href="/rest-api-asr/postman/更换测试参数.md">更换测试参数 </a>文档
+如何替换替换自己的AK SK以及其他参数，请参考文档   <a href="/rest-api-asr/postman/更换测试参数.md">更换测试参数 </a>文档
 
 
 
