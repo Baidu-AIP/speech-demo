@@ -30,25 +30,6 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201401.png)
 
 Access Token 有效期为30天，开发者需要对 Access Token的有效性进行判断，如果Access Token过期可以重新获取。
-
-
-
-目前 API 仅支持**整段语音**识别的模式，即需要上传完整语音文件进行识别。文件大小不超过10M，时长不超过60s。 语音数据上传POST方式有2种：
-
-1. JSON格式POST上传本地文件。
-2. raw格式POST上传本地文件。
-
-- 请求地址
-
-| 语音识别模型   | 请求地址                                                     |
-| :------------- | :----------------------------------------------------------- |
-| 语音识别       | http://vop.baidu.com/server_api https://vop.baidu.com/server_api http://vop.baidubce.com/server_api (服务端部署在百度云时，调用该地址可免外网流量费用，且返回识别结果速度更快) |
-| 语音识别极速版 | https://vop.baidu.com/pro_api                                |
-
-
-
-  
-
   
 
 ## Raw 方式上传
