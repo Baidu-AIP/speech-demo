@@ -10,14 +10,11 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ### 测试流程
 
-使用postman打开json文件 通过client_id和client_secret获取 token； 利用获得的token，并填写必要参数和上传需要识别的音频文件 调用语音识别接口
+使用postman打开json文件 通过client_id和client_secret获取 token； 利用获得的token，并填写必要参数和所填写的文本 调用语音合成接口生成音频文件
 
 ## 导入Json文件
 
 打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的postman_collection.json 文件。
-
-
-
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201400.png)
 
@@ -44,10 +41,15 @@ Access Token 有效期为30天，开发者需要对 Access Token的有效性进�
 ## 修改合成参数
 
 1.修改合成文本
+
 2.修改合成发音人
+
 3.修改合成语速
+
 4.修改音调
+
 5.修改合成音量
+
 6.修改该合成保存格式
 
 
