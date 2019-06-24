@@ -1,12 +1,51 @@
 {
 	"info": {
-		"_postman_id": "450983ab-4f95-4b38-8cc7-6a61272836be",
+		"_postman_id": "fb292d89-617d-4228-92ec-2234eb7cc4d8",
 		"name": "极速版",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "asr",
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://openapi.baidu.com/oauth/2.0/token?client_id=填写你自己的App KEY&client_secret=填写你自己的Secret KEY&grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"2.0",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "填写你自己的App KEY",
+							"description": "必须参数，应用的 API Key;"
+						},
+						{
+							"key": "client_secret",
+							"value": "填写你自己的Secret KEY",
+							"description": "必须参数，应用的 Secret Key;"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"description": "必须参数，固定为“client_credentials”"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asr_raw",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -25,8 +64,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "audio/pcm;rate=16000",
-						"type": "text"
+						"type": "text",
+						"value": "audio/pcm;rate=16000"
 					}
 				],
 				"body": {
@@ -36,7 +75,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://vop.baidu.com/pro_api?dev_pid=80001&cuid=123456PHP&token=24.2cf541dcfcd2353d843dbab40c45f376.2592000.1563604401.282335-15803531",
+					"raw": "http://vop.baidu.com/pro_api?dev_pid=80001&cuid=123456PHP&token=填写token鉴权信息",
 					"protocol": "http",
 					"host": [
 						"vop",
@@ -49,15 +88,18 @@
 					"query": [
 						{
 							"key": "dev_pid",
-							"value": "80001"
+							"value": "80001",
+							"description": "默认80001"
 						},
 						{
 							"key": "cuid",
-							"value": "123456PHP"
+							"value": "123456PHP",
+							"description": "用户唯一标识，用来区分用户，计算UV值。"
 						},
 						{
 							"key": "token",
-							"value": "24.2cf541dcfcd2353d843dbab40c45f376.2592000.1563604401.282335-15803531"
+							"value": "填写token鉴权信息",
+							"description": "开放平台获取到的开发者[access_token]获取 Access Token \"access_token\")"
 						}
 					]
 				},
