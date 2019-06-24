@@ -31,7 +31,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 结果如：
 ```
-"access_token": "24.e12f4404d743f08214074a7c0cf36cf4.2592000.1563701134.282335-15803531",
+24.e12f4404d743f08214074a7c0cf36cf4.2592000.1563701134.282335-15803531
 ```
 
 小结：通过网页上的官方控制台应用的 App KEY 及 App Secret 分别填入client_id，client_secret字段，获取鉴权信息（即token）。
