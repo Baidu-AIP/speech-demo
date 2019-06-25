@@ -9,8 +9,11 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ##  查看完整的HTTP请求
 
 1.使用postman  点击菜单栏 View 选择 Show Postman Console 如下图
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251801.png)
+
 此时再测试HTTP请求会在Console里有完整的请求  如下图
+
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251802.png)
 
 ##  查看耗时
