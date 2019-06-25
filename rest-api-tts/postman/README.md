@@ -11,7 +11,9 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ### 测试流程
 
 1.使用postman打开json文件
+
 2.点击token请求页面，获取鉴权用的token
+
 3.点击tts请求页面，填入上一步获得的token，及选择需要识别的音频文件，调用语音合成接口生成音频文件
 
 ## 导入Json文件
@@ -26,7 +28,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ![img](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201700.jpg)
 
-1. 点击左侧导入的Token，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
+1. 点击左侧导入的Token，选择第一个Request： "POST token" ，点击Send按钮完成token获取，获取结果如下
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201401.png)
 
