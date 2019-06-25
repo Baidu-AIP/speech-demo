@@ -69,12 +69,6 @@
 						"description": "语音文件的格式，pcm 或者 wav 或者 amr。不区分大小写。推荐pcm文件\n采样率，16000，固定值"
 					}
 				],
-				"body": {
-					"mode": "file",
-					"file": {
-						"src": "/C:/Users/v_wangfeng03/Downloads/16k.pcm"
-					}
-				},
 				"url": {
 					"raw": "http://vop.baidu.com/server_api?dev_pid=1536&cuid=123456PHP&token=24.2cf541dcfcd2353d843dbab40c45f376.2592000.1563604401.282335-15803531",
 					"protocol": "http",
