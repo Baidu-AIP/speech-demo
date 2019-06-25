@@ -67,7 +67,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 另一种POST方式请求暂时不提供示例，因postman构造json比较复杂。需要的话，可以参见官方文档或者本项目的其它语言实现
 
 ## 更换测试参数
-如何替换替换自己应用的 App KEY 及 App Secret 以及其他HTTP请求参数，请参考文档  [更换测试参数](rest-api-asr/postman/README.md)  文档
+如何替换替换自己应用的 App KEY 及 App Secret 以及其他HTTP请求参数，请参考文档  [更换测试参数](/rest-api-asr/postman/更换测试参数.md)  文档
 
 
 
