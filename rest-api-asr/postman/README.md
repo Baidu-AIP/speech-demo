@@ -36,7 +36,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 小结：通过网页上的官方控制台应用的 App KEY 及 App Secret 分别填入client_id，client_secret字段，获取鉴权信息（即token）。
 
-## Raw 方式上传
+### Raw 方式上传
 
 
 1.点击之前左侧导入的Token，选择第二个POST asr ，将上一步获取的token的值填入token字段，如下图
