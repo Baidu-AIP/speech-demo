@@ -1,6 +1,5 @@
-# 简介
+# postman的几个实用功能
 
-文档介绍使用postman 几个功能
 
 poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下载
 
@@ -16,13 +15,15 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251802.png)
 
+
+
+### 生成其他编程语言代码
+当完成请求后点击 Code 按钮 ，选取HTTP，选择想生成的其他编程语言代码
+
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251805.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251806.png)
+
 ##  查看耗时
 耗时显示 如下图
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251804.png)
-
-### 更改为其他编程语言
-当完成请求后点击 Code 按钮 ，选取HTTP，选择想转换的其他编程语言
-
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251805.png)
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906251806.png)
