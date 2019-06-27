@@ -23,23 +23,18 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ### 获取token
 
-获取AccessToken 需要您在应用管理界面中新建应用，应用列表中即可查看。 开放平台上： 
 
-![img](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261700.jpg)
+1. 点击左侧导入的Tts，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
 
-1. 点击左侧导入的Token，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261700.png)
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906201401.png)
+小结：通过网页上的官方控制台应用的 App KEY 及 App Secret 分别填入client_id，client_secret字段，获取鉴权信息（即token）。
 
-Access Token 有效期为30天，开发者需要对 Access Token的有效性进行判断，如果Access Token过期可以重新获取。
+### 访问合成接口 
 
+1.点击之前左侧导入的Tts，选择第二个POST tts，在Body下x-www-form-urlencoded替换刚才获取的token的值，最后点击Send 测试；合成完成后，可点击右下角的download 下载合成音频文件 如下图
 
-
-
-
-1.点击之前左侧导入的Token，选择第三个POST tts，在Body下x-www-form-urlencoded替换刚才获取的token的值，最后点击Send 测试；合成完整后，可点击右下角的download 下载合成音频文件 如下图
-
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906211400.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261701.png)
 
 
 ##  更换测试参数
