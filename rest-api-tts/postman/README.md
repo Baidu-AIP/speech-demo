@@ -19,13 +19,13 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的tts_collection.json 文件。
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906261700.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201700.png)
 
 ### 获取token
 
 获取AccessToken 需要您在应用管理界面中新建应用，应用列表中即可查看。 开放平台上： 
 
-![img](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201700.jpg)
+![img](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906261700.jpg)
 
 1. 点击左侧导入的Token，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
 
