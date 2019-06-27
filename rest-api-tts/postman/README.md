@@ -19,7 +19,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的tts_collection.json 文件。
 
-![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201700.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201400.png)
 
 ### 获取token
 
