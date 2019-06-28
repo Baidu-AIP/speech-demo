@@ -10,7 +10,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/  点击download 下
 
 
 ## 测试流程
-
+**测试目的：本文档是把16k.pcm音频文件转换成文本 “北京科技馆”**
 1. 使用postman打开json文件 
 2. 点击token请求页面，获取鉴权用的token
 3. 点击asr_raw请求页面，填入上一步获得的token，及选择需要识别的音频文件，调用语音识别接口
