@@ -10,6 +10,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 示例 postman版本： v7.2.2
 
 ## 测试流程
+**测试目的：本文档是把文本“百度你好”转换成MP3音频文件**
 
 1.使用postman打开json文件
 
@@ -26,7 +27,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ### 获取token
 
 
-1. 点击左侧导入的Tts，选择第一个POST token，点击Send按钮完成token获取，获取结果如下
+1. 点击左侧的Tts图标，选择第一个Request："POST token"，点击Send按钮完成token获取，获取结果如下
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261700.png)
 
@@ -34,9 +35,10 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ### 访问合成接口 
 
-1.点击之前左侧导入的Tts，选择第二个POST tts，在Body下x-www-form-urlencoded替换刚才获取的token的值，最后点击Send 测试；合成完成后，可点击右下角的download 下载合成音频文件 如下图
+1.点击之前左侧导入的Tts，选择第二个POST tts，在Body下x-www-form-urlencoded替换刚才获取的token的值，最后点击Send 测试；合成完成后，可以点击播放按钮试听，也可以点击右下角的download 下载合成音频文件 如下图
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261701.png)
+![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261702.png)
 
 
 ##  更换测试参数
