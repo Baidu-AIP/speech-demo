@@ -12,7 +12,9 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ## 测试流程
 
 1.使用postman打开json文件
+
 2.点击token请求页面，获取鉴权用的token
+
 3.点击tts请求页面，填入上一步获得的token，调用语音合成接口生成音频文件
 
 ### 导入Json文件
