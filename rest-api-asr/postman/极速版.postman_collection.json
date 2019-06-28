@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fb292d89-617d-4228-92ec-2234eb7cc4d8",
+		"_postman_id": "6680f3bc-86f1-46cc-b141-83e1108b955a",
 		"name": "极速版",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -75,7 +75,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://vop.baidu.com/pro_api?dev_pid=80001&cuid=123456PHP&token=填写token鉴权信息",
+					"raw": "http://vop.baidu.com/pro_api?dev_pid=80001&cuid=123456postman&token=填写token鉴权信息",
 					"protocol": "http",
 					"host": [
 						"vop",
@@ -93,7 +93,7 @@
 						},
 						{
 							"key": "cuid",
-							"value": "123456PHP",
+							"value": "123456postman",
 							"description": "用户唯一标识，用来区分用户，计算UV值。"
 						},
 						{
