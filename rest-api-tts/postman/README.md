@@ -3,7 +3,7 @@
 
 文档介绍使用postman 脚本方式调用 REST API合成接口发起HTTP请求
 
-Postman是很好用的一款HTTP API/接口功能测试工具，很方便，无需编写代码，图形化界面，能进行简单测试并查看HTTP请求的详细信息。
+Postman是很便捷的一款HTTP API/接口功能测试工具，无需编写代码，图形化界面，能进行简单测试并查看HTTP请求的详细信息。
 
 poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下载
 
@@ -12,7 +12,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ## 测试流程
 **测试目的：本文档是把文本“百度你好”转换成MP3音频文件**
 
-1.使用postman打开json文件
+1.使用postman打开tts_collection.json文件
 
 2.点击token请求页面，获取鉴权用的token
 
