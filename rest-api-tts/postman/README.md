@@ -12,7 +12,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ## 测试流程
 **测试目的：本文档是把文本“百度你好”转换成MP3音频文件**
 
-1.使用postman打开tts_collection.json文件
+1.使用postman打开Tts_collection.json文件
 
 2.点击token请求页面，获取鉴权用的token
 
@@ -20,7 +20,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ### 导入Json文件
 
-打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的tts_collection.json 文件。
+打开Postman,点击左上方的Import，在弹出的窗口点击“Choose Files” 选择本文档同目录下的Tts_collection.json 文件。
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-asr/postman/doc-images/201906201400.png)
 
