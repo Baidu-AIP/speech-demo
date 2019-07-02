@@ -45,5 +45,6 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 ##  更换测试参数
 如何替换替换自己应用的 App KEY 及 App Secret 以及其他HTTP请求参数，请参考文档 [更换测试参数.md](/rest-api-tts/postman/更换测试参数.md) 
 
-
+## postman的几个实用功能
+postman的几个使用功能请查看 [postman实用功能](/rest-api-asr/postman/postman实用功能.md) 
 
