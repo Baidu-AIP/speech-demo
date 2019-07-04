@@ -81,5 +81,5 @@ $format = "amr"; // 文件后缀 pcm/wav/amr
         $DEV_PID = 80001; 
         $SCOPE = 'brain_enhanced_asr'; 
 
-另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a格式
+另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件
    ​
