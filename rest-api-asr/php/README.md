@@ -74,5 +74,12 @@ $audio_file = "./16k-23850.amr";
 $format = "amr"; // 文件后缀 pcm/wav/amr
 
 ```
+## 测试付费极速版
+打开下面的注释：
 
+        $ASR_URL = "https://vop.baidu.com/pro_api";
+        $DEV_PID = 80001; 
+        $SCOPE = 'brain_enhanced_asr'; 
+
+另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a格式
    ​
