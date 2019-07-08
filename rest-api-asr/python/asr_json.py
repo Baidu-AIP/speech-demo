@@ -45,7 +45,7 @@ SCOPE = 'audio_voice_assistant_get'  # 有此scope表示有asr能力，没有请
 # 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
 
 # DEV_PID = 80001
-# ASR_URL = 'https://vop.baidu.com/pro_api'
+# ASR_URL = 'http://vop.baidu.com/pro_api'
 # SCOPE = 'brain_enhanced_asr'  # 有此scope表示有极速版能力，没有请在网页里开通极速版
 
 # 忽略scope检查，非常旧的应用可能没有
