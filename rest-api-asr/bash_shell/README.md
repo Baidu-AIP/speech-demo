@@ -46,7 +46,7 @@ sh asr.sh
 修改以下参数：
 
 ```bash
-FILE="16k_test.pcm"
+FILE="16k.pcm"
 
 # 根据文件FILE的后缀填写：pcm/wav/amr 格式，极速版额外支持m4a 格式
 FORMAT="pcm"
