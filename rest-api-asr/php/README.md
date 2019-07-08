@@ -74,7 +74,7 @@ $audio_file = "./16k-23850.amr";
 $format = "amr"; // 文件后缀 pcm/wav/amr
 
 ```
-## 测试付费极速版
+## 测试极速版
 打开下面的注释：
 
         $ASR_URL = "https://vop.baidu.com/pro_api";
