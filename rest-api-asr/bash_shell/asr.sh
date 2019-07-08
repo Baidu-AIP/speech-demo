@@ -12,7 +12,7 @@ APPSECRET="O9o1O213UgG5LFn0bDGNtoRN3VWl2du6"
 # 需要识别的文件
 # Audio file to recognition
 FILE="16k_test.pcm"
-FORMAT="pcm"  # support pcm/wav/amr
+FORMAT="pcm"  # support pcm/wav/amr 格式，极速版额外支持m4a 格式
 RATE="16000"
 
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
@@ -20,8 +20,8 @@ RATE="16000"
 API_URL="https://vop.baidu.com/server_api"
 DEV_PID="1537"
 
-# 收费高速版请使用下面URL和PID 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版
-# ASR MODEL 80001 收费高速版
+# 极速版请使用下面URL和PID 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
+# ASR MODEL 80001 极速版
 # API_URL="https://vop.baidu.com/pro_api"
 # DEV_PID="80001"
 
