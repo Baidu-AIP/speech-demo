@@ -85,7 +85,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
 static RETURN_CODE fill_config(struct asr_config *config) {
     ...
     // 需要识别的文件
-    char *filename = "16k_test.pcm";
+    char *filename = "16k.pcm";
 
     //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型 其它语种参见文档
     int dev_pid = 1537;
