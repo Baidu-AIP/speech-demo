@@ -48,7 +48,7 @@ sh asr.sh
 ```bash
 FILE="16k_test.pcm"
 
-# 根据文件FILE的后缀填写：pcm/wav/amr
+# 根据文件FILE的后缀填写：pcm/wav/amr 极速版额外支持m4a 格式
 FORMAT="pcm"
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 DEV_PID="1537"
@@ -67,7 +67,7 @@ DEV_PID="1737"
 ```bash
 FILE="16k-23850.amr"
 
-# 根据文件FILE的后缀填写：pcm/wav/amr
+# 根据文件FILE的后缀填写：pcm/wav/amr 格式，极速版额外支持m4a 格式
 FORMAT="amr"
 ```
 
@@ -79,5 +79,5 @@ FORMAT="amr"
 # API_URL="https://vop.baidu.com/pro_api"
 # DEV_PID="80001"
 ```
-
+另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 ​
 
