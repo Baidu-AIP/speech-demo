@@ -28,7 +28,7 @@ API_KEY = 'kVcnfD9iW2XVZSMaLMrtLYIz'
 SECRET_KEY = 'O9o1O213UgG5LFn0bDGNtoRN3VWl2du6'
 
 # 需要识别的文件
-AUDIO_FILE = './pcm/16k.pcm'  # 只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式
+AUDIO_FILE = './audio/16k.pcm'  # 只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式
 # 文件格式
 FORMAT = AUDIO_FILE[-3:]  # 文件后缀只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式
 
