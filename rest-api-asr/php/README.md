@@ -52,7 +52,7 @@ windows 下可能产生乱码，请打开result.txt
 
 ```php
 # 需要识别的文件
-$AUDIO_FILE = "./16k_test.pcm";
+$AUDIO_FILE = "./16k.pcm";
 # 文件格式
 $FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a 格式
 ```
@@ -82,4 +82,3 @@ $format = "amr"; // 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a �
         $SCOPE = 'brain_enhanced_asr'; 
 
 另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件
-   ​
