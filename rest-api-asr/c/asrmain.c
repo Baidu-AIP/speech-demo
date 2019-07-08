@@ -27,10 +27,10 @@ static RETURN_CODE fill_config(struct asr_config *config) {
     char *scope = "audio_voice_assistant_get"; // # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有
 
 
-    /* 收费极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
+    /* 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
     url = "http://vop.baidu.com/pro_api"; // 可改为https
     dev_pid = 80001;
-    scope = "brain_enhanced_asr"; // 有此scope表示有收费极速版能力，没有请在网页里开通极速版
+    scope = "brain_enhanced_asr"; // 有此scope表示有极速版能力，没有请在网页里开通极速版
     */
 
     /* 忽略scope检查，非常旧的应用可能没有
