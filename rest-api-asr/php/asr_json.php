@@ -12,7 +12,7 @@ $SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 
 
 # 需要识别的文件
-$AUDIO_FILE = "./16k_test.pcm";
+$AUDIO_FILE = "./16k.pcm";
 # 文件格式
 
 $FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式 极速版额外支持m4a 格式
