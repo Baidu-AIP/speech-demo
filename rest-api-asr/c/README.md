@@ -118,7 +118,7 @@ char *format = filename + strlen(filename) - 3;
 打开以下注释：
 
 ```c
- /* 收费极速版
+ /* 极速版
     url = "http://vop.baidu.com/pro_api"; // 可改为https
     dev_pid = 80001;
     scope = "brain_enhanced_asr"; // 有此scope表示有极速版能力，没有请在网页里开通极速版 （开通后可能会收费）
