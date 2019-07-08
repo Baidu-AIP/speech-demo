@@ -1,5 +1,6 @@
 <?php
 define('DEMO_CURL_VERBOSE', false); // 打印curl debug信息
+
 /**
 * php -m 检查是否开启php curl扩展
 */
@@ -10,9 +11,8 @@ $API_KEY =  "kVcnfD9iW2XVZSMaLMrtLYIz";
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
 $SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 
-
 # 需要识别的文件
-$AUDIO_FILE = "./16k.pcm";
+$AUDIO_FILE = "./16k.m4a";
 # 文件格式
 
 $FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式 极速版额外支持m4a 格式
@@ -28,7 +28,7 @@ $DEV_PID = 1537; //  1537 表示识别普通话，使用输入法模型。1536�
 $SCOPE = 'audio_voice_assistant_get'; // 有此scope表示有语音识别普通版能力，没有请在网页里开通语音识别能力
 
 # 极速版需要打开以下信息 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
-//$ASR_URL = "https://vop.baidu.com/pro_api";
+//$ASR_URL = "http://vop.baidu.com/pro_api";
 //$DEV_PID = 80001; 
 //$SCOPE = 'brain_enhanced_asr';  // 有此scope表示有极速版能力，没有请在网页里开通极速版
 
@@ -37,7 +37,7 @@ $SCOPE = false; // 部分历史应用没有加入scope，设为false忽略检查
 /** 公共模块获取token开始 */
 
 
-$auth_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$API_KEY."&client_secret=".$SECRET_KEY;
+$auth_url = "http://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$API_KEY."&client_secret=".$SECRET_KEY;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $auth_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -69,7 +69,6 @@ if ($SCOPE && !in_array($SCOPE, explode(" ", $response['scope']))){
 	// 请至网页上应用内开通语音识别权限
 	exit(3);
 }
-
 
 $token = $response['access_token'];
 echo "token = $token ; expireInSeconds: ${response['expires_in']}\n\n";
