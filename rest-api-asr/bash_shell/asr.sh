@@ -11,7 +11,7 @@ APPSECRET="O9o1O213UgG5LFn0bDGNtoRN3VWl2du6"
 
 # 需要识别的文件
 # Audio file to recognition
-FILE="16k_test.pcm"
+FILE="16k.pcm"
 FORMAT="pcm"  # support pcm/wav/amr 格式，极速版额外支持m4a 格式
 RATE="16000"
 
