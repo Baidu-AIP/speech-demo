@@ -54,7 +54,7 @@ windows 下可能产生乱码，请打开result.txt
 # 需要识别的文件
 $AUDIO_FILE = "./16k_test.pcm";
 # 文件格式
-$FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式
+$FORMAT = substr($AUDIO_FILE, -3); // 文件后缀 pcm/wav/amr 格式 极速版额外支持m4a 格式
 ```
 
 
