@@ -105,7 +105,7 @@ int dev_pid = 1737;
 // 需要识别的文件
 char *filename = "16k-23850.amr";
 
-// 文件后缀 pcm/wav/amr ,不支持其它格式
+// 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a 格式
 char *format = filename + strlen(filename) - 3;
 ```
 
@@ -121,7 +121,8 @@ char *format = filename + strlen(filename) - 3;
  /* 收费极速版
     url = "http://vop.baidu.com/pro_api"; // 可改为https
     dev_pid = 80001;
-    scope = "brain_enhanced_asr"; // 有此scope表示有收费极速版能力，没有请在网页里开通极速版
+    scope = "brain_enhanced_asr"; // 有此scope表示有极速版能力，没有请在网页里开通极速版 （开通后可能会收费）
     */
 ```
 
+另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 ​
