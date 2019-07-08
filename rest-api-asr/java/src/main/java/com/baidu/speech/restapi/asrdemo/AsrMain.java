@@ -26,7 +26,7 @@ public class AsrMain {
     // 需要识别的文件
     private final String FILENAME = "16k_test.pcm";
 
-    // 文件格式, 只支持pcm/wav/amr
+    // 文件格式, 支持pcm/wav/amr 格式，极速版额外支持m4a 格式
     private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
 
 
@@ -41,7 +41,7 @@ public class AsrMain {
 
     private String SCOPE;
 
-    //  免费版 参数
+    //  普通版 参数
     {
         URL = "http://vop.baidu.com/server_api"; // 可以改为https
         //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
@@ -49,7 +49,7 @@ public class AsrMain {
         SCOPE = "audio_voice_assistant_get";
     }
 
-    /* 付费极速版 参数
+    /* 极速版 参数
     {
         URL =   "http://vop.baidu.com/pro_api"; // 可以改为https
         DEV_PID = 80001;
