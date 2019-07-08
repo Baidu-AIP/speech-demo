@@ -83,7 +83,7 @@ FORMAT = "amr"; // 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a �
 # 极速版
 
 DEV_PID = 80001
-ASR_URL = 'https://vop.baidu.com/pro_api'
+ASR_URL = 'http://vop.baidu.com/pro_api'
 SCOPE = 'brain_enhanced_asr'  # 有此scope表示有收费极速版能力，没有请在网页里开通极速版
 
 
