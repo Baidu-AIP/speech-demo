@@ -24,7 +24,7 @@ public class AsrMain {
     private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 
     // 需要识别的文件
-    private final String FILENAME = "16k_test.pcm";
+    private final String FILENAME = "16k.pcm";
 
     // 文件格式, 支持pcm/wav/amr 格式，极速版额外支持m4a 格式
     private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
