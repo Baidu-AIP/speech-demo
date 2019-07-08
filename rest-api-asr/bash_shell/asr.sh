@@ -17,12 +17,12 @@ RATE="16000"
 
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 # ASR Model 1537: input method model; 1536: search model；
-API_URL="https://vop.baidu.com/server_api"
+API_URL="http://vop.baidu.com/server_api"
 DEV_PID="1537"
 
 # 极速版请使用下面URL和PID 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
 # ASR MODEL 80001 极速版
-# API_URL="https://vop.baidu.com/pro_api"
+# API_URL="http://vop.baidu.com/pro_api"
 # DEV_PID="80001"
 
 
