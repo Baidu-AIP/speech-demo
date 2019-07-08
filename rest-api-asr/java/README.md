@@ -72,7 +72,7 @@ private final boolean METHOD_RAW = false; // 默认以json方式上传音频文�
 // 需要识别的文件
 private final String FILENAME = "16k_test.pcm";
 
-// 文件格式, 只支持pcm/wav/amr
+// 文件格式, 支持pcm/wav/amr 格式，极速版额外支持m4a 格式
 private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
 
 DEV_PID = 1537;
@@ -95,9 +95,8 @@ private final String FILENAME = "16k-23850.amr";
 
 ```
 
-   ​
 
-## 测试付费极速版
+## 测试极速版
 
 
 
@@ -110,4 +109,4 @@ private final String FILENAME = "16k-23850.amr";
         SCOPE = "brain_enhanced_asr";
     }
 ```
-
+另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 
