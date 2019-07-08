@@ -48,7 +48,7 @@ sh asr.sh
 ```bash
 FILE="16k_test.pcm"
 
-# 根据文件FILE的后缀填写：pcm/wav/amr 极速版额外支持m4a 格式
+# 根据文件FILE的后缀填写：pcm/wav/amr 格式，极速版额外支持m4a 格式
 FORMAT="pcm"
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 DEV_PID="1537"
