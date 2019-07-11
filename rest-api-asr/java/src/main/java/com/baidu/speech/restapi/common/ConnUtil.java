@@ -56,6 +56,11 @@ public class ConnUtil {
             if (responseCode == 401) {
                 System.err.println("可能是appkey appSecret 填错");
             }
+            System.err.println("response headers" + conn.getHeaderFields());
+            InputStream inputStream = conn.getErrorStream();
+            byte[] result = getInputStreamContent(inputStream);
+            System.err.println(new String(result));
+
             throw new DemoException("http response code is" + responseCode);
         }
 
