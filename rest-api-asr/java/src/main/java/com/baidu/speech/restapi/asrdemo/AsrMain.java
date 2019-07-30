@@ -39,6 +39,8 @@ public class AsrMain {
 
     private int DEV_PID;
 
+    //private int LM_ID;//测试自训练平台需要打开此注释
+
     private String SCOPE;
 
     //  普通版 参数
@@ -48,6 +50,13 @@ public class AsrMain {
         DEV_PID = 1537;
         SCOPE = "audio_voice_assistant_get";
     }
+
+    // 自训练平台 参数
+    /*{
+        //自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+        DEV_PID = 8001;
+        LM_ID = 1234；
+    }*/
 
     /* 极速版 参数
     {
@@ -92,8 +101,10 @@ public class AsrMain {
         return result;
     }
 
-    private String runRawPostMethod(String token) throws IOException, DemoException {
+    private String runRawPostMethod(String token) throws IOException, DemoException {         
         String url2 = URL + "?cuid=" + ConnUtil.urlEncode(CUID) + "&dev_pid=" + DEV_PID + "&token=" + token;
+        //测试自训练平台需要打开以下信息
+        //String url2 = URL + "?cuid=" + ConnUtil.urlEncode(CUID) + "&dev_pid=" + DEV_PID + "&lm_id="+ LM_ID + "&token=" + token;
         String contentTypeStr = "audio/" + FORMAT + "; rate=" + RATE;
         //System.out.println(url2);
         byte[] content = getFileContent(FILENAME);
@@ -117,6 +128,7 @@ public class AsrMain {
 
         JSONObject params = new JSONObject();
         params.put("dev_pid", DEV_PID);
+        //params.put("lm_id",LM_ID);//测试自训练平台需要打开注释
         params.put("format", FORMAT);
         params.put("rate", RATE);
         params.put("token", token);

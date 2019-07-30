@@ -26,6 +26,10 @@ static RETURN_CODE fill_config(struct asr_config *config) {
 
     char *scope = "audio_voice_assistant_get"; // # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有
 
+    //测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+    /* int dev_pid = 8001 ;   
+       int lm_id = 1234 ;
+    */
 
     /* 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
     url = "http://vop.baidu.com/pro_api"; // 可改为https
@@ -104,6 +108,10 @@ RETURN_CODE run_asr(struct asr_config *config, const char *token) {
 
     snprintf(url, sizeof(url), "%s?cuid=%s&token=%s&dev_pid=%d",
              config->url, cuid, token, config->dev_pid);
+
+    //测试自训练平台需要打开以下信息
+    /*snprintf(url, sizeof(url), "%s?cuid=%s&token=%s&dev_pid=%d&lm_id=%d",
+             config->url, cuid, token, config->dev_pid, config->lm_id);*/
     free(cuid);
 
 

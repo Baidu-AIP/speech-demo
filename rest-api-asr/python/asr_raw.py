@@ -44,6 +44,10 @@ DEV_PID = 1536;  # 1537 表示识别普通话，使用输入法模型。1536表�
 ASR_URL = 'http://vop.baidu.com/server_api'
 SCOPE = 'audio_voice_assistant_get'  # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有
 
+#测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+# DEV_PID = 8001 ;   
+# LM_ID = 1234 ;
+
 # 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
 
 #DEV_PID = 80001
@@ -113,6 +117,8 @@ if __name__ == '__main__':
         raise DemoError('file %s length read 0 bytes' % AUDIO_FILE)
 
     params = {'cuid': CUID, 'token': token, 'dev_pid': DEV_PID}
+    #测试自训练平台需要打开以下信息
+    #params = {'cuid': CUID, 'token': token, 'dev_pid': DEV_PID, 'lm_id' : LM_ID}
     params_query = urlencode(params);
 
     headers = {

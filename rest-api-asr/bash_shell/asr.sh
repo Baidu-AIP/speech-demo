@@ -20,6 +20,10 @@ RATE="16000"
 API_URL="http://vop.baidu.com/server_api"
 DEV_PID="1537"
 
+#测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+#DEV_PID="8001"   
+#LM_ID="1234"
+
 # 极速版请使用下面URL和PID 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）
 # ASR MODEL 80001 极速版
 # API_URL="http://vop.baidu.com/pro_api"
@@ -40,6 +44,9 @@ echo
 
 ## step 2: ASR
 ASR_URL="${API_URL}?dev_pid=${DEV_PID}&token=$token&cuid=123456"
+
+##极速版需要打开下面注释
+#ASR_URL="${API_URL}?dev_pid=${DEV_PID}&lm_id={LM_ID}$&token=$token&cuid=123456"
 headers="Content-Type: audio/$FORMAT;rate=$RATE"
 
 echo "Request ASR..."

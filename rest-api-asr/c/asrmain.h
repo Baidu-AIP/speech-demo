@@ -14,6 +14,7 @@ struct asr_config {
     char format[4];
     int rate;
     int dev_pid;
+    //int lm_id;//测试自训练平台需要打开此注释
     char cuid[20];
     char scope[20];
     char url[100];
