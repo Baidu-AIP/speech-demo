@@ -51,15 +51,22 @@ public class ConnUtil {
      */
     public static byte[] getResponseBytes(HttpURLConnection conn) throws IOException, DemoException {
         int responseCode = conn.getResponseCode();
+        InputStream inputStream = conn.getInputStream();
         if (responseCode != 200) {
             System.err.println("http 请求返回的状态码错误，期望200， 当前是 " + responseCode);
             if (responseCode == 401) {
                 System.err.println("可能是appkey appSecret 填错");
             }
+            System.err.println("response headers" + conn.getHeaderFields());
+            if (inputStream == null) {
+                inputStream = conn.getErrorStream();
+            }
+            byte[] result = getInputStreamContent(inputStream);
+            System.err.println(new String(result));
+
             throw new DemoException("http response code is" + responseCode);
         }
 
-        InputStream inputStream = conn.getInputStream();
         byte[] result = getInputStreamContent(inputStream);
         return result;
     }
