@@ -134,7 +134,7 @@ char *format = filename + strlen(filename) - 3;
 打开以下注释：
 
 ```c
-/* int dev_pid = 8001 ;   
+/* dev_pid = 8001 ;   
    int lm_id = 1234 ;
 
    snprintf(url, sizeof(url), "%s?cuid=%s&token=%s&dev_pid=%d&lm_id=%d",
