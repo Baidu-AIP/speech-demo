@@ -126,3 +126,19 @@ char *format = filename + strlen(filename) - 3;
 ```
 
 另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 ​
+
+## 测试自训练平台
+
+自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+
+打开以下注释：
+
+```c
+/* int dev_pid = 8001 ;   
+   int lm_id = 1234 ;
+
+   snprintf(url, sizeof(url), "%s?cuid=%s&token=%s&dev_pid=%d&lm_id=%d",
+         config->url, cuid, token, config->dev_pid, config->lm_id);   
+
+    */
+```

@@ -81,3 +81,12 @@ FORMAT="amr"
 ```
 另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 ​
 
+###测试自训练平台
+自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
+
+需要打开以下注释：
+```bash
+# DEV_PID="8001"   
+# LM_ID="1234"
+
+# ASR_URL="${API_URL}?dev_pid=${DEV_PID}&lm_id={LM_ID}$&token=$token&cuid=123456"
