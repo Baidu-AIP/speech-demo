@@ -46,7 +46,7 @@ echo "Got token: $token"
 echo
 
 ## step 2: TTS
-tts_url="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=123456&tok=$token&per=$SPEAKER&spd=$SPEED&pit=$PITCH&vol=$VOLUME&tex=$TEXT"
+tts_url="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=123456&tok=$token&per=$SPEAKER&spd=$SPEED&pit=$PITCH&vol=$VOLUME&tex=$TEXT&aue=$AUE"
 echo "Request TTS: $tts_url"
 curl -v -o result.$FORMAT "$tts_url"
 
