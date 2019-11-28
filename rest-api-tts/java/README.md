@@ -1,6 +1,6 @@
 ## 简介
 
-使用java测试rest api 识别接口
+使用java测试rest api 合成接口
 
 
 ## 测试流程

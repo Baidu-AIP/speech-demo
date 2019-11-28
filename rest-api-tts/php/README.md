@@ -1,6 +1,6 @@
 ## 简介
 
-使用bash 脚本方式测试rest api 识别接口
+使用php方式测试rest api 合成接口
 
 - windows 下需要安装 cygwin，在cygwin内安装curl
 

@@ -1,6 +1,6 @@
 ## 简介
 
-使用python脚本方式测试rest api 识别接口
+使用python脚本方式测试rest api 合成接口
 
 - 支持python 2.7 及 python 3.7+, 其它版本自行测试
 
