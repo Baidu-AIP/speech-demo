@@ -14,9 +14,9 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 1.使用postman打开Tts.postman_collection.json文件
 
-2.点击token请求页面，获取鉴权用的token
+2.点击token请求页面，获取鉴权用的token。如果请求返回结果成功，postman执行tests中代码，将token自动保存到环境变量中。
 
-3.点击tts请求页面，填入上一步获得的token，调用语音合成接口生成音频文件
+3.点击tts请求页面，从环境变量中自动读取上一步获得的token，调用语音合成接口生成音频文件
 
 ### 导入Json文件
 
@@ -40,7 +40,7 @@ poatman 下载地址：https://www.getpostman.com/downloads/ 点击download 下�
 
 ### 访问合成接口 
 
-1.点击之前左侧导入的Tts，选择第二个POST tts，在Body下x-www-form-urlencoded替换刚才获取的token的值，最后点击Send 测试；合成完成后，可以点击播放按钮试听，也可以点击右下角的download 下载合成音频文件 如下图
+1.点击之前左侧导入的Tts，选择第二个POST tts，在Body下x-www-form-urlencoded引用环境变量中保存的token值 {{baidu_access_token}}，最后点击Send 测试；合成完成后，可以点击播放按钮试听，也可以点击右下角的download 下载合成音频文件 如下图
 
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261702.png)
 ![图片](https://raw.githubusercontent.com/Baidu-AIP/speech-demo/master/rest-api-tts/postman/doc-images/201906261703.png)

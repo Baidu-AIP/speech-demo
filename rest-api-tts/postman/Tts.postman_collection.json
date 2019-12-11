@@ -1,12 +1,31 @@
 {
 	"info": {
-		"_postman_id": "035030c6-9e6e-46e3-a007-9df1af3f3fdb",
+		"_postman_id": "f5b9914f-f960-431f-a1e5-2cecd0ceaab6",
 		"name": "Tts",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf8629a2-cff7-4f15-8d8f-2f05469b615a",
+						"exec": [
+							"// 请求正常返回",
+							"pm.test(\"状态200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// 将access_token保存为环境变量",
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"baidu_access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -80,7 +99,7 @@
 						},
 						{
 							"key": "tok",
-							"value": "24.a7d12f1614a2b94102375641f145ab95.2592000.1563520275.282335-15803531",
+							"value": "{{baidu_access_token}}",
 							"description": "开放平台获取到的开发者access_token（见上面的“鉴权认证机制”段落）",
 							"type": "text"
 						},
@@ -173,5 +192,6 @@
 				"type": "string"
 			}
 		]
-	}
+	},
+	"protocolProfileBehavior": {}
 }
