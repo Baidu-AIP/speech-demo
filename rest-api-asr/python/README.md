@@ -50,7 +50,7 @@ windows 下显示可能产生乱码，请打开result.txt
 # 需要识别的文件
 AUDIO_FILE = "./16k.pcm";
 # 文件格式
-FORMAT = "pcm"; # 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a 格式
+FORMAT = "pcm"; # 文件后缀 pcm/wav/amr/m4a 格式
 # 根据文档填写PID，选择语言及识别模型
 DEV_PID = 1537; #  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 ```
@@ -88,7 +88,7 @@ SCOPE = 'brain_enhanced_asr'  # 有此scope表示有收费极速版能力，没�
 
 
 ```
-另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 
+另外极速版在支持文件后缀 pcm/wav/amr/m4a文件 
 
 
 ## 测试自训练平台
