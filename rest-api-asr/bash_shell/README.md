@@ -48,7 +48,7 @@ sh asr.sh
 ```bash
 FILE="16k.pcm"
 
-# 根据文件FILE的后缀填写：pcm/wav/amr 格式，极速版额外支持m4a 格式
+# 根据文件FILE的后缀填写：pcm/wav/amr/m4a 格式
 FORMAT="pcm"
 # 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
 DEV_PID="1537"
@@ -79,7 +79,7 @@ FORMAT="amr"
 # API_URL="https://vop.baidu.com/pro_api"
 # DEV_PID="80001"
 ```
-另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 
+另外极速版在支持文件后缀 pcm/wav/amr/m4a文件 
 
 ### 测试自训练平台
 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234
