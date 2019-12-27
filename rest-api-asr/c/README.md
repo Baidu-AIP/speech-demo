@@ -105,7 +105,7 @@ int dev_pid = 1737;
 // 需要识别的文件
 char *filename = "16k-23850.amr";
 
-// 文件后缀 pcm/wav/amr 格式，极速版额外支持m4a 格式
+// 文件后缀 pcm/wav/amr/m4a 格式
 char *format = filename + strlen(filename) - 3;
 ```
 
@@ -125,7 +125,7 @@ char *format = filename + strlen(filename) - 3;
     */
 ```
 
-另外极速版在支持文件后缀 pcm/wav/amr基础上还单独额外支持m4a文件 ​
+另外极速版在支持文件后缀 pcm/wav/amr/m4a文件 ​
 
 ## 测试自训练平台
 
