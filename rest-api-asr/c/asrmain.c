@@ -112,7 +112,7 @@ RETURN_CODE run_asr(struct asr_config *config, const char *token) {
     //测试自训练平台需要打开以下信息
     /*snprintf(url, sizeof(url), "%s?cuid=%s&token=%s&dev_pid=%d&lm_id=%d",
              config->url, cuid, token, config->dev_pid, config->lm_id);*/
-    free(cuid);
+    curl_free(cuid);
 
 
     struct curl_slist *headerlist = NULL;
