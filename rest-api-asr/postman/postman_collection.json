@@ -70,7 +70,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://vop.baidu.com/server_api?dev_pid=1536&cuid=123456PHP&token=24.2cf541dcfcd2353d843dbab40c45f376.2592000.1563604401.282335-15803531",
+					"raw": "http://vop.baidu.com/server_api?dev_pid=1537&cuid=123456PHP&token=24.2cf541dcfcd2353d843dbab40c45f376.2592000.1563604401.282335-15803531",
 					"protocol": "http",
 					"host": [
 						"vop",
@@ -83,7 +83,7 @@
 					"query": [
 						{
 							"key": "dev_pid",
-							"value": "1536",
+							"value": "1537",
 							"description": "不填写lan参数生效，都不填写，默认1537（普通话 输入法模型），dev_pid参数见本节开头的表格"
 						},
 						{
@@ -108,7 +108,7 @@
 						"header": [
 							{
 								"key": "DEV_PID",
-								"value": "1536",
+								"value": "1537",
 								"type": "text"
 							},
 							{
