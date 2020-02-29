@@ -21,7 +21,7 @@ static RETURN_CODE fill_config(struct asr_config *config) {
 
     char *url = "http://vop.baidu.com/server_api";  // 可改为https
 
-    //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型 其它语种参见文档
+    //  1537 表示识别普通话，使用输入法模型。其它语种参见文档
     int dev_pid = 1537;
 
     char *scope = "audio_voice_assistant_get"; // # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有
