@@ -46,7 +46,7 @@ public class AsrMain {
     //  普通版 参数
     {
         URL = "http://vop.baidu.com/server_api"; // 可以改为https
-        //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
+        //  1537 表示识别普通话，使用输入法模型。 其它语种参见文档
         DEV_PID = 1537;
         SCOPE = "audio_voice_assistant_get";
     }
