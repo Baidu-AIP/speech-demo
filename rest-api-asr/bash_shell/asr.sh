@@ -15,7 +15,7 @@ FILE="16k.pcm"
 FORMAT="pcm"  # support pcm/wav/amr 格式，极速版额外支持m4a 格式
 RATE="16000"
 
-# 根据文档填写PID，1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型
+# 根据文档填写PID，1537 表示识别普通话，使用输入法模型。
 # ASR Model 1537: input method model; 1536: search model；
 API_URL="http://vop.baidu.com/server_api"
 DEV_PID="1537"
