@@ -18,7 +18,7 @@ public class TokenHolder {
     /**
      * url , Token的url，http可以改为https
      */
-    private static final String url = "http://openapi.baidu.com/oauth/2.0/token";
+    private static final String url = "http://aip.baidubce.com/oauth/2.0/token";
 
     /**
      * asr的权限 scope 是  "audio_voice_assistant_get"
