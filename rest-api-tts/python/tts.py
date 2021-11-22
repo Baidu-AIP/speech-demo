@@ -48,7 +48,7 @@ class DemoError(Exception):
 
 """  TOKEN start """
 
-TOKEN_URL = 'http://openapi.baidu.com/oauth/2.0/token'
+TOKEN_URL = 'http://aip.baidubce.com/oauth/2.0/token'
 SCOPE = 'audio_tts_post'  # 有此scope表示有tts能力，没有请在网页里勾选
 
 
