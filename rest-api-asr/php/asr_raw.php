@@ -41,7 +41,7 @@ $SCOPE = false; // 部分历史应用没有加入scope，设为false忽略检查
 /** 公共模块获取token开始 */
 
 
-$auth_url = "http://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$API_KEY."&client_secret=".$SECRET_KEY;
+$auth_url = "http://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$API_KEY."&client_secret=".$SECRET_KEY;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $auth_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
