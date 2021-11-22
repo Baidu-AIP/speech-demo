@@ -66,7 +66,7 @@ class DemoError(Exception):
 
 """  TOKEN start """
 
-TOKEN_URL = 'http://openapi.baidu.com/oauth/2.0/token'
+TOKEN_URL = 'http://aip.baidubce.com/oauth/2.0/token'
 
 
 def fetch_token():
