@@ -7,7 +7,7 @@
 #include <curl/curl.h> // 依赖libcurl
 #include "token.h"
 
-const char API_TOKEN_URL[] = "http://openapi.baidu.com/oauth/2.0/token";
+const char API_TOKEN_URL[] = "https://aip.baidubce.com/oauth/2.0/token";
 
 const int MAX_TOKEN_SIZE = 100;
 
