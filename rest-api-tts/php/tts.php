@@ -32,7 +32,7 @@ $cuid = "123456PHP";
 
 /** 公共模块获取token开始 */
 
-$auth_url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$apiKey."&client_secret=".$secretKey;
+$auth_url = "https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$apiKey."&client_secret=".$secretKey;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $auth_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
