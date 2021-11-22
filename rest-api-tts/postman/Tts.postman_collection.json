@@ -41,7 +41,7 @@
 					]
 				},
 				"url": {
-					"raw": "https://openapi.baidu.com/oauth/2.0/token",
+					"raw": "https://aip.baidubce.com/oauth/2.0/token",
 					"protocol": "https",
 					"host": [
 						"openapi",
