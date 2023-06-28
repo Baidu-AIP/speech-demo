@@ -6,8 +6,8 @@
 
 # 该KEY仅仅做测试用，正式使用请在 ai.baidu.com 控制台申请个人APP
 # THIS KEY IS FOR TEST ONLY
-APPKEY="kVcnfD9iW2XVZSMaLMrtLYIz"
-APPSECRET="O9o1O213UgG5LFn0bDGNtoRN3VWl2du6"
+APPKEY="kVcnfD9iW2XVZSMaLMxxxxxx"
+APPSECRET="O9o1O213UgG5LFn0bDGNtoRN3xxxxxx"
 
 # 需要识别的文件
 # Audio file to recognition
