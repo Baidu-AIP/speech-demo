@@ -26,12 +26,12 @@
 					"query": [
 						{
 							"key": "client_id",
-							"value": "kVcnfD9iW2XVZSMaLMrtLYIz",
+							"value": "kVcnfD9iW2XVZSMaxxxxxx",
 							"description": "必须参数，应用的 API Key；"
 						},
 						{
 							"key": "client_secret",
-							"value": "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6",
+							"value": "O9o1O213UgG5LFn0bDGNtoRNxxxxxx",
 							"description": "必须参数，应用的 Secret Key;"
 						},
 						{
