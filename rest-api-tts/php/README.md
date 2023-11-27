@@ -14,9 +14,9 @@
 
 ```php
 # 填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-$apiKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
+$apiKey = "4E1BG9lTnlSeIf1NQFlxxxx";
 # 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-$secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
+$secretKey = "544ca4657ba8002e3dea3ac2f5xxxx";
 ```
 
 
