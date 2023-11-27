@@ -20,10 +20,10 @@ public class TtsMain {
     }
 
     //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-    private final String appKey = "4E1BG9lTnlSeIf1NQFlrSq6h";
+    private final String appKey = "4E1BG9lTnlSeIf1NQFlxxxx";
 
     // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    private final String secretKey = "544ca4657ba8002e3dea3ac2f5fdd241";
+    private final String secretKey = "544ca4657ba8002e3dea3ac2f5xxxxx";
 
     // text 的内容为"欢迎使用百度语音合成"的urlencode,utf-8 编码
     // 可以百度搜索"urlencode"
