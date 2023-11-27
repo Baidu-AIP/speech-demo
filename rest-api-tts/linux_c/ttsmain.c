@@ -14,9 +14,9 @@ const char API_TTS_URL[] = "http://tsn.baidu.com/text2audio"; // 可改为https
 
 RETURN_CODE fill_config(struct tts_config *config) {
     // 填写网页上申请的appkey 如 g_api_key="g8eBUMSokVB1BHGmgxxxxxx"
-    char api_key[] = "4E1BG9lTnlSeIf1NQFlrSq6h";
+    char api_key[] = "4E1BG9lTnlSeIf1NQxxxxx";
     // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    char secret_key[] = "544ca4657ba8002e3dea3ac2f5fdd241";
+    char secret_key[] = "544ca4657ba8002e3dea3ac2f5xxxx";
 
     // text 的内容为"欢迎使用百度语音合成"的urlencode,utf-8 编码
     // 可以百度搜索"urlencode"
