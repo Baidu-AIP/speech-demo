@@ -5,8 +5,8 @@
 
 # 该KEY仅仅做测试用，正式使用请在 ai.baidu.com 控制台申请个人APP
 # THIS KEY IS FOR TEST ONLY
-APPKEY="rKCHBLmYiFPuCQTS0HttLbUD"
-APPSECRET="037dc446820ec143d1628c20146b9d34"
+APPKEY="rKCHBLmYiFPuCQTS0Htxxxx"
+APPSECRET="037dc446820ec143d1628c2014xxxxx"
 
 # 需要合成的文本
 # Text to synthesis
