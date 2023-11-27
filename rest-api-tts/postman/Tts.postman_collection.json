@@ -22,13 +22,13 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "kVcnfD9iW2XVZSMaLMrtLYIz",
+							"value": "kVcnfD9iW2XVZSMaLMxxxxx",
 							"description": "必须参数，应用的 API Key；",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6",
+							"value": "O9o1O213UgG5LFn0bDGNtoRN3xxxxxx",
 							"description": "必须参数，应用的 Secret Key;",
 							"type": "text"
 						},
