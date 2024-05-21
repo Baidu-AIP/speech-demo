@@ -65,9 +65,9 @@ cd  项目目录
 
 static RETURN_CODE fill_config(struct asr_config *config) {
      // 填写网页上申请的appkey 如 g_api_key="g8eBUMSokVB1BHGmgxxxxxx"
-    char api_key[] = "kVcnfD9iW2XVZSMaLMrtLYIz";
+    char api_key[] = "xxx";
     // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    char secret_key[] = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
+    char secret_key[] = "xxx";
 
 ```
 

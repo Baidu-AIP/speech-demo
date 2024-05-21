@@ -57,9 +57,9 @@ sh build_and_tts.sh  编译及运行
 
 static RETURN_CODE fill_config(struct tts_config *config) {
     // 填写网页上申请的appkey 如 g_api_key="g8eBUMSokVB1BHGmgxxxxxx"
-    char api_key[] = "4E1BG9lTnlSeIf1NQFlrSq6h";
+    char api_key[] = "xxx";
     // 填写网页上申请的APP SECRET 如 $secretKey="94dc99566550d87f8fa8ece112xxxxx"
-    char secret_key[] = "544ca4657ba8002e3dea3ac2f5fdd241";
+    char secret_key[] = "xxx";
 ```
 
 

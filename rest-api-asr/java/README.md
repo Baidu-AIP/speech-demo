@@ -38,10 +38,10 @@ AsrMain.java为主类，放在```java\src\main\java\com\baidu\speech\restapi\asr
 
 ```java
     //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-    private final String APP_KEY = "kVcnfD9iW2XVZSMaLMrtLYIz";
+    private final String APP_KEY = "xxx";
 
     // 填写网页上申请的APP SECRET 如 $SECRET_KEY="94dc99566550d87f8fa8ece112xxxxx"
-    private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
+    private final String SECRET_KEY = "xxx";
 ```
 
 

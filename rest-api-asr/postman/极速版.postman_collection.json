@@ -149,7 +149,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://openapi.baidu.com/oauth/2.0/token?client_id=kVcnfD9iW2XVZSMaLMrtLYIz&client_secret=O9o1O213UgG5LFn0bDGNtoRN3VWl2du6&grant_type=client_credentials",
+							"raw": "https://openapi.baidu.com/oauth/2.0/token?client_id=xxx&client_secret=xxx&grant_type=client_credentials",
 							"protocol": "https",
 							"host": [
 								"openapi",
@@ -164,11 +164,11 @@
 							"query": [
 								{
 									"key": "client_id",
-									"value": "kVcnfD9iW2XVZSMaLMrtLYIz"
+									"value": "xxx"
 								},
 								{
 									"key": "client_secret",
-									"value": "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6"
+									"value": "xxx"
 								},
 								{
 									"key": "grant_type",
