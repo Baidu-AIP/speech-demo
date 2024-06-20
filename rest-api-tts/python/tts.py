@@ -104,7 +104,7 @@ if __name__ == '__main__':
 
         has_error = ('content-type' not in headers.keys() or headers['content-type'].find('audio/') < 0)
     except  URLError as err:
-        print('asr http response http code : ' + str(err.code))
+        print('tts http response http code : ' + str(err.code))
         result_str = err.read()
         has_error = True
 
