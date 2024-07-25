@@ -2,8 +2,8 @@
 项目地址：https://github.com/Baidu-AIP/speech-demo
 
 文档地址：
-- 语音识别：http://ai.baidu.com/docs#/ASR-API/top
-- 语音合成：http://ai.baidu.com/docs#/TTS-API/top
+- 语音识别：https://ai.baidu.com/ai-doc/SPEECH/Jlbxdezuf
+- 语音合成：https://ai.baidu.com/ai-doc/SPEECH/mlbxh7xie
 
 
 百度语音rest api 调用语音识别，语音合成示例
